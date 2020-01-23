@@ -1,0 +1,107 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+  <section class="section">
+    <article class="article object" data-swiftype-index="true">
+      <h1 class="article-title" data-swiftype-index="false">
+        comment
+
+      </h1>
+
+
+
+      <div class="print-notice" data-swiftype-index="false">
+        This page was printed on Jan 23, 2020. For the current version, visit
+        https://help.shopify.com/en/themes/liquid/objects/comment.
+      </div>
+
+
+
+
+      <p>The <code>comment</code> object has the following attributes:</p>
+      <p><a id="topofpage"></a></p>
+      <div class="table-of-contents">
+        <h2>On this page</h2>
+
+
+        <ul>
+          <li><a href="#comment-author">comment.author</a></li>
+          <li><a href="#comment-content">comment.content</a></li>
+          <li><a href="#comment-created_at">comment.created_at</a></li>
+          <li><a href="#comment-email">comment.email</a></li>
+          <li><a href="#comment-id">comment.id</a></li>
+          <li><a href="#comment-status">comment.status</a></li>
+          <li><a href="#comment-updated_at">comment.updated_at</a></li>
+          <li><a href="#comment-url">comment.url</a></li>
+        </ul>
+
+      </div>
+      <h2 id="comment-author">comment.author</h2>
+      <p>Returns the author of the comment.</p>
+      <h2 id="comment-content">comment.content</h2>
+      <p>Returns the content of the comment.</p>
+      <h2 id="comment-created_at">comment.created_at</h2>
+      <p>Returns the timestamp of when the comment was submitted. </p>
+      <p>Use the <a href="/en/themes/liquid/filters/additional-filters#date"><code>date</code></a> filter to convert
+        the timestamp into a more readable format.</p>
+      <p class="code-label">Input</p>
+      <figure class="highlight">
+        <pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">comment</span><span class="p">.</span><span class="nv">created_at</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%b %d, %Y"</span><span class="w"> </span><span class="p">}}</span></code></pre>
+      </figure>
+      <p class="code-label">Output</p>
+      <figure class="highlight">
+        <pre><code class="language-text" data-lang="text">Feb 26, 2017</code></pre>
+      </figure>
+      <h2 id="comment-email">comment.email</h2>
+      <p>Returns the e-mail address of the comment's author.</p>
+      <h2 id="comment-id">comment.id</h2>
+      <p>Returns the id (unique identifier) of the comment.</p>
+      <h2 id="comment-status">comment.status</h2>
+      <p>Returns the status of the comment. The possible values are:</p>
+      <ul>
+        <li>
+          <code>pending</code>: The comment is awaiting either spam detection or moderation if the blog is moderated.
+        </li>
+        <li>
+          <code>published</code>: The comment is published and visible to the public. It passed spam detection and, if
+          the blog is moderated, was approved.
+        </li>
+        <li>
+          <code>removed</code>: The comment was removed by the shop owner.
+        </li>
+        <li>
+          <code>spam</code>: The comment is marked as spam by Shopify's spam detection.
+        </li>
+        <li>
+          <code>unapproved</code>: The comment is awaiting approval by the shop owner.
+        </li>
+      </ul>
+      <p>Only comments with the status of <code>published</code> are returned in the <a
+          href="/en/themes/liquid/objects/article#article-comments"><code>article.comments</code></a> object.</p>
+      <aside class="note tip">
+        <h4>Tip</h4>
+        <p>
+          Each blog can have its own comment moderation settings. Learn more about how to <a
+            href="https://help.shopify.com/en/manual/sell-online/online-store/blogs/managing-comments">manage comments
+            on blog posts</a>.</p>
+      </aside>
+      <h2 id="comment-updated_at">comment.updated_at</h2>
+      <p>Returns the timestamp of when the comment's status was last changed. For example,
+        the timestamp of when a comment was approved by the article's author.</p>
+      <p>Use the <a href="/en/themes/liquid/filters/additional-filters#date"><code>date</code></a> filter to convert
+        the timestamp into a more readable format.</p>
+      <h2 id="comment-url">comment.url</h2>
+      <p>Returns the URL of the article with <code>comment.id</code> appended to it. This is so the page will
+        automatically scroll to the comment.</p>
+    </article>
+    <div id="Feedback" data-gid="ccb17835-7151-499f-9d58-3c4b25b5da19"></div>
+  </section>
+</div>

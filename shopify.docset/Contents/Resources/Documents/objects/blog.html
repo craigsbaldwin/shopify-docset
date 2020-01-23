@@ -1,0 +1,105 @@
+<html><head><link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet"/>
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet"/>
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css"/>
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+</head><body><div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <a class="dashingAutolink" name="autolink-42"></a><a class="dashAnchor" name="//apple_ref/cpp/Object/blog"></a><h1 class="article-title" data-swiftype-index="false">
+            blog
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Jan 23, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/blog.
+</div>
+
+
+
+
+            <p>The <code>blog</code> object has the following attributes:
+<a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#blog-all_tags">blog.all_tags</a></li>
+<li><a href="#blog-articles">blog.articles</a></li>
+<li><a href="#blog-articles_count">blog.articles_count</a></li>
+<li><a href="#blog-comments_enabled">blog.comments_enabled?</a></li>
+<li><a href="#blog-handle">blog.handle</a></li>
+<li><a href="#blog-id">blog.id</a></li>
+<li><a href="#blog-moderated">blog.moderated?</a></li>
+<li><a href="#blog-next_article">blog.next_article</a></li>
+<li><a href="#blog-previous_article">blog.previous_article</a></li>
+<li><a href="#blog-tags">blog.tags</a></li>
+<li><a href="#blog-title">blog.title</a></li>
+<li><a href="#blog-url">blog.url</a></li>
+    </ul>
+
+    </div><a class="dashingAutolink" name="autolink-43"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/blog.all_tags"></a><h2 id="blog-all_tags">blog.all_tags</h2>
+<p>Returns all tags of all articles of a blog. This includes tags of articles that are not in the current pagination view.</p>
+<p class="input">Input</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for tag in blog.all_tags %}
+    {{ tag }}
+{% endfor %}</code></pre></figure>
+</div>
+
+<p class="output">Output</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">News, Music, Sale, Tips and Tricks</code></pre></figure>
+</div>
+
+<a class="dashingAutolink" name="autolink-44"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/blog.articles"></a><h2 id="blog-articles">blog.articles</h2>
+<p>Returns an array of all articles in a blog. See <a href="en/themes/liquid/objects/article">this page</a> for a list of all available attributes for <code>article</code>.</p>
+<p class="input">Input</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for article in blog.articles %}
+    <span class="nt">&lt;h2&gt;</span>{{ article.title }}<span class="nt">&lt;/h2&gt;</span>
+{% endfor %}</code></pre></figure>
+</div>
+
+<p class="output">Output</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h2&gt;</span>Hello World!<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;h2&gt;</span>This is my second post.<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;h2&gt;</span>Third time&#39;s a charm!<span class="nt">&lt;/h2&gt;</span></code></pre></figure>
+</div>
+
+<a class="dashingAutolink" name="autolink-45"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/blog.articles_count"></a><h2 id="blog-articles_count">blog.articles_count</h2>
+<p>Returns the total number of articles in a blog. This total does not include hidden articles.</p>
+<a class="dashingAutolink" name="autolink-46"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/blog.comments_enabled%3F"></a><h2 id="blog-comments_enabled">blog.comments_enabled?</h2>
+<p>Returns <code>true</code> if comments are enabled, or <code>false</code> if they are disabled.</p>
+<a class="dashingAutolink" name="autolink-47"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/blog.handle"></a><h2 id="blog-handle">blog.handle</h2>
+<p>Returns the <a href="en/themes/liquid/basics/handle">handle</a> of the blog.</p>
+<a class="dashingAutolink" name="autolink-48"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/blog.id"></a><h2 id="blog-id">blog.id</h2>
+<p>Returns the id of the blog.</p>
+<a class="dashingAutolink" name="autolink-49"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/blog.moderated%3F"></a><h2 id="blog-moderated">blog.moderated?</h2>
+<p>Returns <code>true</code> if comments are moderated, or <code>false</code> if they are not moderated.</p>
+<a class="dashingAutolink" name="autolink-50"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/blog.next_article"></a><h2 id="blog-next_article">blog.next_article</h2>
+<p>Returns the next (older) <a href="en/themes/liquid/objects/article">article</a>. Returns <code>nil</code> if there is no next article.</p>
+<a class="dashingAutolink" name="autolink-51"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/blog.previous_article"></a><h2 id="blog-previous_article">blog.previous_article</h2>
+<p>Returns the previous (newer) <a href="en/themes/liquid/objects/article">article</a>. Returns <code>nil</code> if there is no next article.</p>
+<a class="dashingAutolink" name="autolink-52"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/blog.tags"></a><h2 id="blog-tags">blog.tags</h2>
+<p>Returns all tags in a blog. Similar to <a href="#blog.all_tags">all_tags</a>, but only returns tags of articles that are in the filtered view.</p>
+<a class="dashingAutolink" name="autolink-53"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/blog.title"></a><h2 id="blog-title">blog.title</h2>
+<p>Returns the title of the blog.</p>
+<a class="dashingAutolink" name="autolink-54"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/blog.url"></a><h2 id="blog-url">blog.url</h2>
+<p>Returns the relative URL of the blog.</p>
+        </article>
+        <div id="Feedback" data-gid="dafa84d0-c950-4e15-9222-b8380326047a"></div>
+</section></div></body></html>

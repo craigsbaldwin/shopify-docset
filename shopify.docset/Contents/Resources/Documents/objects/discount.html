@@ -1,0 +1,115 @@
+<html><head><link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet"/>
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet"/>
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css"/>
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+</head><body><div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <a class="dashingAutolink" name="autolink-160"></a><a class="dashAnchor" name="//apple_ref/cpp/Object/discount"></a><h1 class="article-title" data-swiftype-index="false">
+            discount
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Jan 23, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/discount.
+</div>
+
+
+
+
+            <p>The <code>discount</code> object contains information about a discount, including its id, code, amount, savings, and type. Note that this object will display a value only if it&#39;s accessed in notifications or in the Order Printer app.</p><aside class="note">
+  <h4>Note</h4>
+  <p>
+Attributes for money amounts, such as prices and totals, are in the customer&#39;s local (presentment) currency. Use a <a href="en/themes/liquid/filters/money-filters">money filter</a> to show the result as a monetary amount.</p>
+</aside><p>The <code>discount</code> object has the following attributes:</p><p><a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#discount-amount">discount.amount</a></li>
+<li><a href="#discount-code">discount.code</a></li>
+<li><a href="#discount-id">discount.id</a></li>
+<li><a href="#discount-savings">discount.savings</a></li>
+<li><a href="#discount-title">discount.title</a></li>
+<li><a href="#discount-total_amount">discount.total_amount</a></li>
+<li><a href="#discount-total_savings">discount.total_savings</a></li>
+<li><a href="#discount-type">discount.type</a></li>
+    </ul>
+
+    </div><a class="dashingAutolink" name="autolink-161"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/discount.amount"></a><h2 id="discount-amount">discount.amount</h2>
+<p>Returns the amount of the discount.</p>
+<p class="code-label">Input</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{{ discount.amount | money }}</code></pre></figure>
+</div>
+
+<p class="code-label">Output</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">$25</code></pre></figure>
+</div>
+
+<a class="dashingAutolink" name="autolink-162"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/discount.code"></a><h2 id="discount-code">discount.code</h2>
+<p>Returns the title or discount code of the discount. Same as <code>discount.title</code>.</p><aside class="note">
+  <h4>Note</h4>
+  <p>
+In <a href="en/manual/sell-online/notifications/email-variables#discounts">email notifications</a> templates, <code>discount.code</code> must be in a loop to appear correctly. This allows for multiple discounts to be applied.</p>
+</aside>
+<a class="dashingAutolink" name="autolink-163"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/discount.id"></a><h2 id="discount-id">discount.id</h2>
+<p>Returns the id of the discount.</p>
+<a class="dashingAutolink" name="autolink-164"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/discount.savings"></a><h2 id="discount-savings">discount.savings</h2>
+<p>Returns the amount of the discount&#39;s savings. The negative opposite of <a href="#discount.amount">amount</a>.</p>
+<p class="code-label">Input</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{{ discount.savings | money }}</code></pre></figure>
+</div>
+
+<p class="code-label">Output</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">$-25</code></pre></figure>
+</div>
+
+<a class="dashingAutolink" name="autolink-165"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/discount.title"></a><h2 id="discount-title">discount.title</h2>
+<p>Returns the title or discount code of the discount.</p>
+<p class="code-label">Input</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{{ discount.title }}</code></pre></figure>
+</div>
+
+<p class="code-label">Output</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">SPRING14</code></pre></figure>
+</div>
+
+<a class="dashingAutolink" name="autolink-166"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/discount.total_amount"></a><h2 id="discount-total_amount">discount.total_amount</h2>
+<p>Returns the total amount of the discount if it has been applied to multiple <a href="en/themes/liquid/objects/line_item">line items</a>.</p>
+<a class="dashingAutolink" name="autolink-167"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/discount.total_savings"></a><h2 id="discount-total_savings">discount.total_savings</h2>
+<p>Returns the total amount of the discount&#39;s savings if it has been applied to multiple <a href="en/themes/liquid/objects/line_item">line items</a>. The negative opposite of <a href="#discount-total_amount">total_amount</a>.</p>
+<a class="dashingAutolink" name="autolink-168"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/discount.type"></a><h2 id="discount-type">discount.type</h2>
+<p>Returns the type of the discount. The possible values of <code>discount.type</code> are:</p>
+<ul>
+<li>FixedAmountDiscount
+</li>
+<li>PercentageDiscount
+</li>
+<li>ShippingDiscount
+</li>
+</ul>
+
+        </article>
+        <div id="Feedback" data-gid="3b2fbb11-6671-4bfa-b514-edeadf7170a6"></div>
+</section></div></body></html>

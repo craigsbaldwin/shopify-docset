@@ -1,0 +1,204 @@
+<html><head><link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet"/>
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet"/>
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css"/>
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+</head><body><div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+  <section class="section">
+    <article class="article object" data-swiftype-index="true">
+      <a class="dashingAutolink" name="autolink-0"></a><a class="dashAnchor" name="//apple_ref/cpp/Object/The%20address%20object"></a><h1 class="article-title" data-swiftype-index="false">
+        The address object
+
+      </h1>
+
+
+
+      <div class="print-notice" data-swiftype-index="false">
+        This page was printed on Jan 23, 2020. For the current version, visit
+        https://help.shopify.com/en/themes/liquid/objects/address.
+      </div>
+
+
+
+
+      <p>The <code>address</code> object contains information entered by a customer in Shopify&#39;s checkout pages. Note
+        that a customer can enter two addresses: <strong>billing address</strong> or <strong>shipping address</strong>.
+      </p>
+      <figure class="figure"><img src="https://cdn.shopify.com/shopifycloud/help/assets/themes/address-fd953330bef5c1926d5b79a5159d2639a87e7fcbf2ae8763904e3fefa566ae63.jpg" width="610" height="505"/></figure>
+      <p>When accessing attributes of the <code>address</code> object, you must specify which address you want to
+        target. This is done by using either <code>shipping_address</code> or <code>billing_address</code> before the
+        attribute.</p>
+      <p><code>address</code> can be used in email templates, the order status page of the checkout, as well as in apps
+        such as Order Printer.</p>
+      <div class="table-of-contents">
+        <h2>On this page</h2>
+
+
+        <ul>
+          <li><a href="#address-address1">address.address1</a></li>
+          <li><a href="#address-address2">address.address2</a></li>
+          <li><a href="#address-city">address.city</a></li>
+          <li><a href="#address-company">address.company</a></li>
+          <li><a href="#address-country">address.country</a></li>
+          <li><a href="#address-country_code">address.country_code</a></li>
+          <li><a href="#address-first_name">address.first_name</a></li>
+          <li><a href="#address-last_name">address.last_name</a></li>
+          <li><a href="#address-name">address.name</a></li>
+          <li><a href="#address-phone">address.phone</a></li>
+          <li><a href="#address-province">address.province</a></li>
+          <li><a href="#address-province_code">address.province_code</a></li>
+          <li><a href="#address-street">address.street</a></li>
+          <li><a href="#address-url">address.url</a></li>
+          <li><a href="#address-zip">address.zip</a></li>
+        </ul>
+
+      </div>
+      <a class="dashingAutolink" name="autolink-1"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.address1"></a><h2 id="address-address1">address.address1</h2>
+      <p>Returns the value of the Address1 field of the address.</p>
+      <a class="dashingAutolink" name="autolink-2"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.address2"></a><h2 id="address-address2">address.address2</h2>
+      <p>Returns the value of the Address2 field of the address.</p>
+      <a class="dashingAutolink" name="autolink-3"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.city"></a><h2 id="address-city">address.city</h2>
+      <p>Returns the value of the City field of the address.</p>
+      <a class="dashingAutolink" name="autolink-4"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.company"></a><h2 id="address-company">address.company</h2>
+      <p>Returns the value of the Company field of the address.</p>
+      <a class="dashingAutolink" name="autolink-5"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.country"></a><h2 id="address-country">address.country</h2>
+      <p>Returns the value of the Country field of the address.</p>
+      <p class="input">Input</p>
+
+      <div>
+        <figure class="highlight">
+          <pre><code class="language-html" data-lang="html">{{ shipping_address.country }}</code></pre>
+        </figure>
+      </div>
+
+      <p class="output">Output</p>
+
+      <div>
+        <figure class="highlight">
+          <pre><code class="language-html" data-lang="html">Canada</code></pre>
+        </figure>
+      </div>
+
+      <a class="dashingAutolink" name="autolink-6"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.country_code"></a><h2 id="address-country_code">address.country_code</h2>
+      <p>Returns the value of the Country field of the address in ISO 3166-2 standard format.</p>
+      <p class="input">Input</p>
+
+      <div>
+        <figure class="highlight">
+          <pre><code class="language-html" data-lang="html">{{ shipping_address.country_code }}</code></pre>
+        </figure>
+      </div>
+
+      <p class="output">Output</p>
+
+      <div>
+        <figure class="highlight">
+          <pre><code class="language-html" data-lang="html">CA</code></pre>
+        </figure>
+      </div>
+
+      <a class="dashingAutolink" name="autolink-7"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.first_name"></a><h2 id="address-first_name">address.first_name</h2>
+      <p>Returns the value of the First Name field of the address.</p>
+      <a class="dashingAutolink" name="autolink-8"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.last_name"></a><h2 id="address-last_name">address.last_name</h2>
+      <p>Returns the value of the Last Name field of the address.</p>
+      <a class="dashingAutolink" name="autolink-9"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.name"></a><h2 id="address-name">address.name</h2>
+      <p>Returns the values of the First Name <strong>and</strong> Last Name fields of the address.</p>
+      <p class="input">Input</p>
+
+      <figure class="highlight">
+        <pre><code class="language-html" data-lang="html">Hello, {{ billing_address.name }}</code></pre>
+      </figure>
+
+      <p class="output">Output</p>
+
+      <div>
+        <figure class="highlight">
+          <pre><code class="language-html" data-lang="html">Hello, Bob Biller</code></pre>
+        </figure>
+      </div>
+
+      <a class="dashingAutolink" name="autolink-10"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.phone"></a><h2 id="address-phone">address.phone</h2>
+      <p>Returns the value of the Phone field of the address.</p>
+      <a class="dashingAutolink" name="autolink-11"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.province"></a><h2 id="address-province">address.province</h2>
+      <p>Returns the value of the Province/State field of the address.</p>
+      <p class="input">Input</p>
+
+      <div>
+        <figure class="highlight">
+          <pre><code class="language-html" data-lang="html">{{ billing_address.province }}</code></pre>
+        </figure>
+      </div>
+
+      <p class="output">Output</p>
+
+      <div>
+        <figure class="highlight">
+          <pre><code class="language-html" data-lang="html">Ontario</code></pre>
+        </figure>
+      </div>
+
+      <a class="dashingAutolink" name="autolink-12"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.province_code"></a><h2 id="address-province_code">address.province_code</h2>
+      <p>Returns the abbreviated value of the Province/State field of the address.</p>
+      <p class="input">Input</p>
+
+      <div>
+        <figure class="highlight">
+          <pre><code class="language-html" data-lang="html">{{ billing_address.province_code }}</code></pre>
+        </figure>
+      </div>
+
+      <p class="output">Output</p>
+
+      <div>
+        <figure class="highlight">
+          <pre><code class="language-html" data-lang="html">ON</code></pre>
+        </figure>
+      </div>
+
+      <a class="dashingAutolink" name="autolink-13"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.street"></a><h2 id="address-street">address.street</h2>
+      <p>Returns the combined values of the Address1 and Address2 fields of the address.</p>
+      <p class="input">Input</p>
+
+      <div>
+        <figure class="highlight">
+          <pre><code class="language-html" data-lang="html">{{ shipping_address.street }}</code></pre>
+        </figure>
+      </div>
+
+      <p class="output">Output</p>
+
+      <div>
+        <figure class="highlight">
+          <pre><code class="language-html" data-lang="html">126 York St, Shopify Office</code></pre>
+        </figure>
+      </div>
+
+      <a class="dashingAutolink" name="autolink-14"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.url"></a><h2 id="address-url">address.url</h2>
+      <p>Returns the relative URL of the address.</p>
+      <p class="input">Input</p>
+
+      <div>
+        <figure class="highlight">
+          <pre><code class="language-html" data-lang="html">{{ address.url }}</code></pre>
+        </figure>
+      </div>
+
+      <p class="output">Output</p>
+
+      <div>
+        <figure class="highlight">
+          <pre><code class="language-html" data-lang="html">/account/addresses/12345</code></pre>
+        </figure>
+      </div>
+
+      <a class="dashingAutolink" name="autolink-15"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/address.zip"></a><h2 id="address-zip">address.zip</h2>
+      <p>Returns the value of the Postal/Zip field of the address.</p>
+    </article>
+    <div id="Feedback" data-gid="96845e25-55dc-4f9d-9047-bc45958b91ea"></div>
+  </section>
+</div></body></html>

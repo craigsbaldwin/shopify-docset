@@ -1,0 +1,65 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            current_tags
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Jan 23, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/current-tags.
+</div>
+
+
+
+
+            <p>Product tags are used to filter a collection to only show products that contain a specific product tag. Similarly, article tags are used to filter a blog to only show products that contain a specific article tag. The <code>current_tags</code> variable is an array that contains all tags that are being used to filter a collection or blog.</p>
+<aside class="note note-information">
+<h4>Tip</h4>
+<p>Tags inside the current_tags array will always display in alphabetical order. It is not possible to manually change the order.</p>
+</aside>
+<p><a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#inside-collection-liquid">Inside collection.liquid</a></li>
+<li><a href="#inside-blog-liquid">Inside blog.liquid</a></li>
+    </ul>
+
+    </div><h2 id="inside-collection-liquid">Inside collection.liquid</h2>
+<p>Inside collection.liquid, <code>current_tags</code> contains all <strong>product tags</strong> that are used to filter a collection.</p><p>The example below creates a list that displays every tag within every product in a collection.  If the collection is filtered by the tag (i.e. if <code>current_tags</code> <strong>does</strong> contain the tag), the link will remove the filter. If the collection is not currently filtered by the tag (if <code>current_tags</code> <strong>does not</strong> contain the tag), a link will appear to allow the user to do so.</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul&gt;</span>
+{% for tag in collection.all_tags %}
+    {% if current_tags contains tag %}
+          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;</span>{{ tag | link_to_remove_tag: tag }}<span class="nt">&lt;/li&gt;</span>
+    {% else %}
+          <span class="nt">&lt;li&gt;</span>{{ tag | link_to_add_tag: tag }}<span class="nt">&lt;/li&gt;</span>
+    {% endif %}
+{% endfor %}
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<h2 id="inside-blog-liquid">Inside blog.liquid</h2>
+<p>Inside blog.liquid,  <code>current_tags</code> contains all <strong>article</strong> tags that are used to filter the blog.</p><p>The example below adds a breadcrumb that shows which article tag is being used to filter a blog.  If there is a tag being used to filter a blog, the breadcrumb displays the tag name and  provides a link back to the unfiltered blog.</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% if current_tags %}
+  <span class="nt">&lt;h1&gt;</span>{{ blog.title | link_to: blog.url }} <span class="ni">&amp;raquo;</span> {{ current_tags.first }}<span class="nt">&lt;/h1&gt;</span>
+{% else %}
+  <span class="nt">&lt;h1&gt;</span>{{ blog.title }}<span class="nt">&lt;/h1&gt;</span>
+{% endif %}</code></pre></figure>
+
+        </article>
+        <div id="Feedback" data-gid="fb0d308c-3d70-463b-b724-6c0e58c4ffed"></div>
+</section></div>

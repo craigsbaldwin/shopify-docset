@@ -1,0 +1,166 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            article
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Jan 23, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/article.
+</div>
+
+
+
+
+            <p>The <code>article</code> object has the following attributes:</p><p><a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#article-author">article.author</a></li>
+<li><a href="#article-comments">article.comments</a></li>
+<li><a href="#article-comments_count">article.comments_count</a></li>
+<li><a href="#article-comments_enabled">article.comments_enabled?</a></li>
+<li><a href="#article-comment_post_url">article.comment_post_url</a></li>
+<li><a href="#article-content">article.content</a></li>
+<li><a href="#article-created_at">article.created_at</a></li>
+<li><a href="#article-excerpt">article.excerpt</a></li>
+<li><a href="#article-excerpt_or_content">article.excerpt_or_content</a></li>
+<li><a href="#article-handle">article.handle</a></li>
+<li><a href="#article-id">article.id</a></li>
+<li><a href="#article-image">article.image</a></li>
+<li><a href="#article-moderated">article.moderated?</a></li>
+<li><a href="#article-published_at">article.published_at</a></li>
+<li><a href="#article-tags">article.tags</a></li>
+<li><a href="#article-title">article.title</a></li>
+<li><a href="#article-updated_at">article.updated_at</a></li>
+<li><a href="#article-url">article.url</a></li>
+<li><a href="#article-user">article.user</a></li>
+    </ul>
+
+    </div><h2 id="article-author">article.author</h2>
+<p>Returns the full name of the article's author.</p>
+<h2 id="article-comments">article.comments</h2>
+<p>Returns the published <a href="/en/themes/liquid/objects/comment">comments</a> of the article. Returns an empty array if comments are disabled.</p>
+<h2 id="article-comments_count">article.comments_count</h2>
+
+<p>Returns the number of published comments for the article.</p>
+
+<h2 id="article-comments_enabled">article.comments_enabled?</h2>
+
+<p>Returns <code>true</code> if comments are enabled. Returns <code>false</code> if comments are disabled.</p>
+
+<h2 id="article-comment_post_url">article.comment_post_url</h2>
+<p>Returns the relative URL where POST requests are sent to when creating new comments.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">article</span><span class="p">.</span><span class="nv">comment_post_url</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">/blogs/news/10582441-sale-starts-today/comments</code></pre></figure>
+<h2 id="article-content">article.content</h2>
+
+<p>Returns the content of the article.</p>
+
+<h2 id="article-created_at">article.created_at</h2>
+
+<p>Returns the timestamp of when the article was created. Use the <a href="/en/themes/liquid/filters/additional-filters#date">date filter</a> to format the timestamp.</p>
+
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">article</span><span class="p">.</span><span class="nv">created_at</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%a, %b %d, %y"</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Fri, Sep 16, 11</code></pre></figure>
+<h2 id="article-excerpt">article.excerpt</h2>
+
+<p>Returns the excerpt of the article.</p>
+
+<h2 id="article-excerpt_or_content">article.excerpt_or_content</h2>
+<p> </p><p>Returns <code>article.excerpt</code> of the article if it exists. Returns <code>article.content</code> if an excerpt does not exist for the article.</p>
+<h2 id="article-handle">article.handle</h2>
+<p> Returns the <a href="/en/themes/liquid/basics/handle">handle</a> of the article.</p>
+<h2 id="article-id">article.id</h2>
+<p>Returns the id of the article.</p>
+<h2 id="article-image">article.image</h2>
+<p>Returns the article's <a href="/en/themes/liquid/objects/image">image object</a>.</p>
+<h3 id="article-image-alt">article.image.alt</h3>
+<p>Returns the article image's <code>alt</code> text.</p>
+<h3 id="article-image-src">article.image.src</h3>
+<p>Returns the relative URL to the article image.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">article</span><span class="p">.</span><span class="nv">image</span><span class="p">.</span><span class="nv">src</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">img_url</span><span class="p">:</span><span class="w"> </span><span class="s1">'500x'</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">//cdn.shopify.com/s/files/1/0087/0462/blogs/summer_article_500x.png?v=1334084726</code></pre></figure>
+<h2 id="article-moderated">article.moderated?</h2>
+
+<p>Returns <code>true</code> if the blog that the article belongs to is set to moderate comments. Returns <code>false</code> if the blog is not moderated.</p>
+
+<h2 id="article-published_at">article.published_at</h2>
+
+<p>Returns the date/time when the article was published. Use the <a href="/en/themes/liquid/filters/additional-filters#date">date filter</a> to format the timestamp.</p>
+
+<h2 id="article-tags">article.tags</h2>
+<p>Returns all the tags for the article.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">article.tags</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">news new-products photography</code></pre></figure>
+<h3 id="total-tag-count">Total tag count</h3>
+<p>When looping through <code>article.tags</code>, you can print how many times a tag is used with <code>tag.total_count</code>. This number shows visitors how many blog posts have been tagged with a particular tag:</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">article.tags</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="p">}}</span> (<span class="p">{{</span><span class="w"> </span><span class="nv">tag</span><span class="p">.</span><span class="nv">total_count</span><span class="w"> </span><span class="p">}}</span>)
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">news (5) new-products (2) photography (1)</code></pre></figure>
+<h2 id="article-title">article.title</h2>
+<p>Returns the title of the article.</p>
+<h2 id="article-updated_at">article.updated_at</h2>
+
+<p>Returns the date/time when the article was updated. Use the <a href="/en/themes/liquid/filters/additional-filters#date">date filter</a> to format the timestamp.</p>
+
+<h2 id="article-url">article.url</h2>
+<p>Returns the relative URL of the article.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">article</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">/blogs/news/10582441-my-new-article</code></pre></figure>
+<h2 id="article-user">article.user</h2>
+<p>Returns an object with information about the article's author. This information can be edited in the <strong>Staff accounts</strong> options on the <a href="//www.shopify.com/admin/settings/account"><strong>Account</strong> page</a> in your Shopify admin.</p>
+<h3 id="article-user-account_owner">article.user.account_owner</h3>
+<p>Returns <code>true</code> if the author of the article is the account owner of the store. Returns <code>false</code> if the author is not the account owner.</p>
+<h3 id="article-user-bio">article.user.bio</h3>
+<p>Returns the bio of the author of the article.</p>
+<h3 id="article-user-email">article.user.email</h3>
+<p>Returns the email of the author of the article.</p>
+<h3 id="article-user-first_name">article.user.first_name</h3>
+<p>Returns the first name of the author of the article.</p>
+<h3 id="article-user-homepage">article.user.homepage</h3>
+<p>Returns the home page of the article author.</p>
+<h3 id="article-user-image">article.user.image</h3>
+<p>Returns the <a href="/en/themes/liquid/objects/image">image object</a> of the author of the article.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">article</span><span class="p">.</span><span class="nv">user</span><span class="p">.</span><span class="nv">image</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{{</span><span class="w"> </span><span class="nv">article</span><span class="p">.</span><span class="nv">user</span><span class="p">.</span><span class="nv">image</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">img_url</span><span class="p">:</span><span class="w"> </span><span class="s1">'200x200'</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">//cdn.shopify.com/s/files/1/0087/0462/users/user-image_200x200.png?v=1337103726</code></pre></figure>
+<h3 id="article-user-last_name">article.user.last_name</h3>
+<p>Returns the last name of the author of the article.</p>
+        </article>
+        <div id="Feedback" data-gid="1cdf94ee-dbae-4c41-a180-724bfb23505a"></div>
+</section></div>

@@ -1,0 +1,120 @@
+<html><head><link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet"/>
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet"/>
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css"/>
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+</head><body><div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <a class="dashingAutolink" name="autolink-55"></a><a class="dashAnchor" name="//apple_ref/cpp/Object/cart"></a><h1 class="article-title" data-swiftype-index="false">
+            cart
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Jan 23, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/cart.
+</div>
+
+
+
+
+            <aside class="note">
+  <h4>Note</h4>
+  <p>
+Attributes for money amounts, such as prices and totals, are in the customer&#39;s local (presentment) currency. Use a <a href="en/themes/liquid/filters/money-filters">money filter</a> to show the result as a monetary amount.</p>
+</aside><p>The  <code>cart</code> object has the following attributes:</p><p><a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#cart-attributes">cart.attributes</a></li>
+<li><a href="#cart-cart_level_discount_applications">cart.cart_level_discount_applications</a></li>
+<li><a href="#cart-currency">cart.currency</a></li>
+<li><a href="#cart-discount_applications">cart.discount_applications</a></li>
+<li><a href="#cart-item_count">cart.item_count</a></li>
+<li><a href="#cart-items">cart.items</a></li>
+<li><a href="#cart-items_subtotal_price">cart.items_subtotal_price</a></li>
+<li><a href="#cart-note">cart.note</a></li>
+<li><a href="#cart-original_total_price">cart.original_total_price</a></li>
+<li><a href="#cart-total_discount">cart.total_discount</a></li>
+<li><a href="#cart-total_price">cart.total_price</a></li>
+<li><a href="#cart-total_weight">cart.total_weight</a></li>
+    </ul>
+
+    </div><a class="dashingAutolink" name="autolink-56"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/cart.attributes"></a><h2 id="cart-attributes">cart.attributes</h2>
+<p><code>cart.attributes</code> allow the capturing of more information on the cart page. This is done by giving an input a <code>name</code> attribute with the following syntax:</p><figure class="highlight"><pre><code class="language-" data-lang="">attributes[attribute-name]</code></pre></figure><p>You can add a double underscore (<code>__</code>) prefix to an attribute name to make it private. Private attributes behave like other cart attributes except that they can&#39;t be read from Liquid or the Ajax API. You can use them for data that doesn&#39;t affect the page rendering, which allows for more effective page cacheing.</p><p>Shown below is a basic example of how to use an HTML input of type &#34;text&#34; to capture information on the cart page. You can also create a <code>cart.attributes</code> input by using the <a href="https://ui-elements-generator.myshopify.com/pages/cart-attribute">Shopify UI elements generator</a>.</p><figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;label&gt;</span>What is your Pet&#39;s name?<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&#34;text&#34;</span> <span class="na">name=</span><span class="s">&#34;attributes[your-pet-name]&#34;</span> <span class="na">value=</span><span class="s">&#34;{{ cart.attributes.your-pet-name }}&#34;</span> <span class="nt">/&gt;</span></code></pre></figure><p><code>cart.attributes</code> can be accessed in order email templates, the order status page of the checkout, as well as in apps such as <a href="en/manual/apps/apps-by-shopify/order-printer">Order Printer</a>.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">attributes</span><span class="p">.</span><span class="nv">your-pet-name</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-" data-lang="">Haku</code></pre></figure>
+<a class="dashingAutolink" name="autolink-57"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/cart.cart_level_discount_applications"></a><h2 id="cart-cart_level_discount_applications">cart.cart_level_discount_applications</h2>
+<p>Returns an array of any cart-specific <a href="en/themes/liquid/objects/discount-application">discount applications</a> for the cart.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">discount_application</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">cart.cart_level_discount_applications</span><span class="w"> </span><span class="p">%}</span>
+  Discount name: <span class="p">{{</span><span class="w"> </span><span class="nv">discount_application</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+  Savings: -<span class="p">{{</span><span class="w"> </span><span class="nv">discount_application</span><span class="p">.</span><span class="nv">total_allocated_amount</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">Discount name: SUMMER16
+Savings: -$20.00</code></pre></figure>
+<a class="dashingAutolink" name="autolink-58"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/cart.currency"></a><h2 id="cart-currency">cart.currency</h2>
+
+<p>Returns the <a href="en/themes/liquid/objects/currency">currency</a> of the cart. If your store uses multi-currency, then the <code>cart.currency</code> is the same as the customer&#39;s local (presentment) currency. Otherwise, the cart currency is the same as your store currency.</p>
+
+<p>To return the list of currencies that are accepted by your store, see the  <a href="en/themes/liquid/objects/shop#shop-enabled_currencies">shop.enabled_currencies</a> object.</p>
+
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">cart</span><span class="p">.</span><span class="nv">currency</span><span class="p">.</span><span class="nv">iso_code</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">USD</code></pre></figure>
+<a class="dashingAutolink" name="autolink-59"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/cart.discount_applications"></a><h2 id="cart-discount_applications">cart.discount_applications</h2>
+<p>Returns an array of <a href="en/themes/liquid/objects/discount-application">discount applications</a> for the cart.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">discount_application</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">cart.discount_applications</span><span class="w"> </span><span class="p">%}</span>
+  Discount name: <span class="p">{{</span><span class="w"> </span><span class="nv">discount_application</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+  Savings: -<span class="p">{{</span><span class="w"> </span><span class="nv">discount_application</span><span class="p">.</span><span class="nv">total_allocated_amount</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">Discount name: SUMMER16
+Savings: -$20.00</code></pre></figure>
+<a class="dashingAutolink" name="autolink-60"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/cart.item_count"></a><h2 id="cart-item_count">cart.item_count</h2>
+<p> </p><p>Returns the number of items inside the cart.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">cart</span><span class="p">.</span><span class="nv">item_count</span><span class="w"> </span><span class="p">}}</span> <span class="p">{{</span><span class="w"> </span><span class="nv">cart</span><span class="p">.</span><span class="nv">item_count</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">pluralize</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;item&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;items&#39;</span><span class="w"> </span><span class="p">}}</span> (<span class="p">{{</span><span class="w"> </span><span class="nv">cart</span><span class="p">.</span><span class="nv">total_price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="w"> </span><span class="p">}}</span>)</code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-" data-lang="">25 items ($53.00)</code></pre></figure>
+<a class="dashingAutolink" name="autolink-61"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/cart.items"></a><h2 id="cart-items">cart.items</h2>
+<p>Returns all of the <a href="en/themes/liquid/objects/line_item">line items</a> in the cart.</p>
+<a class="dashingAutolink" name="autolink-62"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/cart.items_subtotal_price"></a><h2 id="cart-items_subtotal_price">cart.items_subtotal_price</h2>
+<p>Returns the sum of the cart&#39;s line-item prices after any line-item discount. The subtotal doesn&#39;t include taxes (unless taxes are included in the prices), cart discounts, or shipping costs.</p>
+<a class="dashingAutolink" name="autolink-63"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/cart.note"></a><h2 id="cart-note">cart.note</h2>
+<p><code>cart.note</code> allows the capturing of more information on the cart page.</p><p>This is done by submitting the cart form with an HTML <code>textarea</code> and wrapping the <code>cart.note</code> output.</p><figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;label&gt;</span>Gift note:<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">&#34;note&#34;</span><span class="nt">&gt;&lt;/textarea&gt;</span></code></pre></figure><aside class="note">
+  <h4>Note</h4>
+  <p>
+There can only be one instance of <code>{{ cart.note }}</code> on the cart page. If there are multiple instances, the one that comes latest in the Document Object Model (DOM) will be submitted with the form.</p>
+</aside><p><code>cart.note</code> can be accessed in order email templates, the order status page of the checkout, as well as in apps such as <a href="en/manual/apps/apps-by-shopify/order-printer">Order Printer</a>.  For examples on how to use cart notes, see  <a href="en/themes/customization/cart/get-more-information-with-order-notes">Ask a customer for additional information</a>.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">note</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-" data-lang="">Hope you like the gift, Kylea!</code></pre></figure>
+<a class="dashingAutolink" name="autolink-64"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/cart.original_total_price"></a><h2 id="cart-original_total_price">cart.original_total_price</h2>
+<p>Returns the subtotal of the cart before any discounts have been applied.</p>
+<a class="dashingAutolink" name="autolink-65"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/cart.total_discount"></a><h2 id="cart-total_discount">cart.total_discount</h2>
+<p>Returns the total of all discounts (the amount saved) for the cart.</p>
+<a class="dashingAutolink" name="autolink-66"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/cart.total_price"></a><h2 id="cart-total_price">cart.total_price</h2>
+<p>Returns the total price of all of the items in the cart after discounts have been applied.</p>
+<a class="dashingAutolink" name="autolink-67"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/cart.total_weight"></a><h2 id="cart-total_weight">cart.total_weight</h2>
+<p>Returns the total weight of all of the items in the cart.</p>
+        </article>
+        <div id="Feedback" data-gid="5b4c9321-2381-4621-8eed-f8beb58e9865"></div>
+</section></div></body></html>

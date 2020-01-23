@@ -1,0 +1,52 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            all_country_option_tags
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Jan 23, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/all-country-option-tags.
+</div>
+
+
+
+
+            <p>The <code>all_country_option_tags</code> object creates an <code>&lt;option&gt;</code> tag for each country.</p><p>An attribute called <code>data-provinces</code> is set for each <code>&lt;option&gt;</code>, and contains a JSON-encoded array of the country's subregions. If a country doesn't have any subregions, then an empty array is set for its <code>data-provinces</code> attribute.</p><aside class="note">
+  <h4>Note</h4>
+  <p>
+The <code>all_country_option_tags</code> object should be wrapped in <code>&lt;select&gt;</code> tags.</p>
+</aside>
+<p class="input">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"country"</span><span class="nt">&gt;</span>
+  {{ all_country_option_tags }}
+<span class="nt">&lt;/select&gt;</span></code></pre></figure>
+
+<p class="output">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"country"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"---"</span> <span class="na">data-provinces=</span><span class="s">"[]"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Afghanistan"</span> <span class="na">data-provinces=</span><span class="s">"[]"</span><span class="nt">&gt;</span>Afghanistan<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Aland Islands"</span> <span class="na">data-provinces=</span><span class="s">"[]"</span><span class="nt">&gt;</span>Åland Islands<span class="nt">&lt;/option&gt;</span>
+  ...
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Canada"</span> <span class="na">data-provinces=</span><span class="s">"[["</span><span class="na">Alberta</span><span class="err">","</span><span class="na">Alberta</span><span class="err">"],["</span><span class="na">British</span> <span class="na">Columbia</span><span class="err">","</span><span class="na">British</span> <span class="na">Columbia</span><span class="err">"],["</span><span class="na">Manitoba</span><span class="err">","</span><span class="na">Manitoba</span><span class="err">"],["</span><span class="na">New</span> <span class="na">Brunswick</span><span class="err">","</span><span class="na">New</span> <span class="na">Brunswick</span><span class="err">"],["</span><span class="na">Newfoundland</span><span class="err">","</span><span class="na">Newfoundland</span><span class="err">"],["</span><span class="na">Northwest</span> <span class="na">Territories</span><span class="err">","</span><span class="na">Northwest</span> <span class="na">Territories</span><span class="err">"],["</span><span class="na">Nova</span> <span class="na">Scotia</span><span class="err">","</span><span class="na">Nova</span> <span class="na">Scotia</span><span class="err">"],["</span><span class="na">Nunavut</span><span class="err">","</span><span class="na">Nunavut</span><span class="err">"],["</span><span class="na">Ontario</span><span class="err">","</span><span class="na">Ontario</span><span class="err">"],["</span><span class="na">Prince</span> <span class="na">Edward</span> <span class="na">Island</span><span class="err">","</span><span class="na">Prince</span> <span class="na">Edward</span> <span class="na">Island</span><span class="err">"],["</span><span class="na">Quebec</span><span class="err">","</span><span class="na">Quebec</span><span class="err">"],["</span><span class="na">Saskatchewan</span><span class="err">","</span><span class="na">Saskatchewan</span><span class="err">"],["</span><span class="na">Yukon</span><span class="err">","</span><span class="na">Yukon</span><span class="err">"]]"</span><span class="nt">&gt;</span>Canada<span class="nt">&lt;/option&gt;</span>
+  ...
+<span class="nt">&lt;/select&gt;</span></code></pre></figure>
+
+        </article>
+        <div id="Feedback" data-gid="7c200730-0606-4791-a52a-1b3334df688f"></div>
+</section></div>

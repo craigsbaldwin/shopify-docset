@@ -1,0 +1,222 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            collection
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Jan 23, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/collection.
+</div>
+
+
+
+
+            <p>The <code>collection</code> object has the following attributes:</p><p><a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#collection-all_products_count">collection.all_products_count</a></li>
+<li><a href="#collection-all_tags">collection.all_tags</a></li>
+<li><a href="#collection-all_types">collection.all_types</a></li>
+<li><a href="#collection-all_vendors">collection.all_vendors</a></li>
+<li><a href="#collection-current_type">collection.current_type</a></li>
+<li><a href="#collection-current_vendor">collection.current_vendor</a></li>
+<li><a href="#collection-default_sort_by">collection.default_sort_by</a></li>
+<li><a href="#collection-description">collection.description</a></li>
+<li><a href="#collection-handle">collection.handle</a></li>
+<li><a href="#collection-id">collection.id</a></li>
+<li><a href="#collection-image">collection.image</a></li>
+<li><a href="#collection-next_product">collection.next_product</a></li>
+<li><a href="#collection-previous_product">collection.previous_product</a></li>
+<li><a href="#collection-products">collection.products</a></li>
+<li><a href="#collection-products_count">collection.products_count</a></li>
+<li><a href="#collection-published_at">collection.published_at</a></li>
+<li><a href="#collection-sort_by">collection.sort_by</a></li>
+<li><a href="#collection-sort_options">collection.sort_options</a></li>
+<li><a href="#collection-template_suffix">collection.template_suffix</a></li>
+<li><a href="#collection-title">collection.title</a></li>
+<li><a href="#collection-tags">collection.tags</a></li>
+<li><a href="#collection-url">collection.url</a></li>
+    </ul>
+
+    </div><h2 id="collection-all_products_count">collection.all_products_count</h2>
+<p>Returns the number of products in a collection. <code>collection.all_products_count</code> will return the total number of products even when the collection view is filtered.</p><p>In comparison, <code>collection.products_count</code> returns the count of all products in a collection for the current view. For example, if a collection is filtered by tag, <code>collection.products_count</code> returns the number of products that match the current filter.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">all_products_count</span><span class="w"> </span><span class="p">}}</span> total products in this collection</code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">24 total products in this collection</code></pre></figure>
+<h2 id="collection-all_tags">collection.all_tags</h2>
+<p>Returns a list of all product tags in a collection. <code>collection.all_tags</code> will return the full list of tags even when the collection view is filtered.</p><p><code>collection.all_tags</code> will return at most 1,000 tags.</p><p>In comparison, <code>collection.tags</code> returns all tags for a collection for the current view. For example, if a collection is filtered by tag, <code>collection.tags</code> returns only the tags that match the current filter.</p>
+<h2 id="collection-all_types">collection.all_types</h2>
+<p>Returns a list of all product types in a collection.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">product_type</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">collection.all_types</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{{</span><span class="w"> </span><span class="nv">product_type</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">link_to_type</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">&lt;a href="/collections/types?q=Accessories" title="Accessories"&gt;Accessories&lt;/a&gt;
+&lt;a href="/collections/types?q=Chairs" title="Chairs"&gt;Chairs&lt;/a&gt;
+&lt;a href="/collections/types?q=Shoes" title="Shoes"&gt;Shoes&lt;/a&gt;</code></pre></figure>
+<h2 id="collection-all_vendors">collection.all_vendors</h2>
+<p>Returns a list of all product vendors in a collection.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">product_vendor</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">collection.all_vendors</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{{</span><span class="w"> </span><span class="nv">product_vendor</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">link_to_vendor</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">&lt;a href="/collections/vendors?q=Shopify" title="Shopify"&gt;Shopify&lt;/a&gt;
+&lt;a href="/collections/vendors?q=Shirt+Company" title="Shirt Company"&gt;Shirt Company&lt;/a&gt;
+&lt;a href="/collections/vendors?q=Montezuma" title="Montezuma"&gt;Montezuma&lt;/a&gt;</code></pre></figure>
+<h2 id="collection-current_type">collection.current_type</h2>
+<p>Returns the product type on a <code>/collections/types?q=TYPE</code> collection page. For example, an automatic "Shirts" collection lists all products of type "Shirts" in the store: <code>yourstore.myshopify.com/collections/types?q=Shirts</code>.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">current_type</span><span class="w"> </span><span class="p">%}</span>
+Browse all our <span class="p">{{</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">current_type</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">downcase</span><span class="w"> </span><span class="p">}}</span>.
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">Browse all our shirts.</code></pre></figure>
+<h2 id="collection-current_vendor">collection.current_vendor</h2>
+<p>Returns the product vendor on a <code>/collections/vendors?q=VENDOR</code> collection page. For example, an automatic "ApparelCo" collection lists all products with the vendor "ApparelCo" in the store: <code>yourstore.myshopify.com/collections/vendors?q=ApparelCo</code>.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">current_vendor</span><span class="w"> </span><span class="p">%}</span>
+All products by <span class="p">{{</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">current_vendor</span><span class="w"> </span><span class="p">}}</span>.
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">All products by ApparelCo.</code></pre></figure>
+<h2 id="collection-default_sort_by">collection.default_sort_by</h2>
+<p>Returns the sort order of the collection set in the collection's page in your Shopify admin.</p><p>The possible sort orders are:</p>
+<ul>
+<li>
+<code>manual</code>
+</li>
+<li>
+<code>best-selling</code>
+</li>
+<li>
+<code>title-ascending</code>
+</li>
+<li>
+<code>title-descending</code>
+</li>
+<li>
+<code>price-ascending</code>
+</li>
+<li>
+<code>price-descending</code>
+</li>
+<li>
+<code>created-ascending</code>
+</li>
+<li>
+<code>created-descending</code>
+</li>
+</ul>
+
+<h2 id="collection-description">collection.description</h2>
+<p>Returns the description of the collection.</p>
+<h2 id="collection-handle">collection.handle</h2>
+<p>Returns the collection's <a href="/en/themes/liquid/basics/handle">handle</a>.</p>
+<h2 id="collection-id">collection.id</h2>
+<p>Returns the ID number of the collection.</p>
+<h2 id="collection-image">collection.image</h2>
+<p>Returns the <a href="/en/themes/liquid/objects/image">image</a> of the collection.</p><p>Use the <a href="/en/themes/liquid/filters/url-filters#img_url">img_url</a> filter to load the image file from the Shopify content delivery network (CDN). Use an <a href="/en/themes/liquid/tags/control-flow-tags#if">if</a> tag to check for the presence of the image first.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">image</span><span class="w"> </span><span class="p">%}{{</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">image</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">img_url</span><span class="p">:</span><span class="w"> </span><span class="s1">'medium'</span><span class="w"> </span><span class="p">}}{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">//cdn.shopify.com/s/files/1/0087/0462/collections/collection-image_medium.png?v=1337103726</code></pre></figure>
+<h2 id="collection-next_product">collection.next_product</h2>
+<p>Returns the next product in the collection. Returns <code>nil</code> if there is no next product.</p><figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">next_product</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{{</span><span class="w"> </span><span class="s1">'Next product'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">link_to</span><span class="p">:</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">next_product</span><span class="p">.</span><span class="nv">url</span><span class="p">,</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">next_product</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre></figure><aside class="note tip">
+  <h4>Tip</h4>
+  <p>
+You can use <code>collection.next_product.url</code> to return the URL of the next product in the collection.</p>
+</aside>
+<h2 id="collection-previous_product">collection.previous_product</h2>
+<p>Returns the previous product in the collection. Returns <code>nil</code> if there is no previous product.</p><aside class="note tip">
+  <h4>Tip</h4>
+  <p>
+You can use <code>collection.previous_product.url</code> to return the URL of the previous product in the collection.</p>
+</aside>
+<h2 id="collection-products">collection.products</h2>
+<p>Returns all of the products in a collection. You can show a maximum of 50 products per page.</p><p>Use the <a href="/en/themes/liquid/tags/theme-tags#paginate">paginate</a> tag to choose how many products are shown per page.</p>
+<h2 id="collection-products_count">collection.products_count</h2>
+<p>Returns the number of products in a collection that match the current view. For example, if you are viewing a collection filtered by tag, <code>collection.products_count</code> will return the number of products that match the chosen tag.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">products_count</span><span class="w"> </span><span class="p">}}</span> products</code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">6 products</code></pre></figure>
+<h2 id="collection-published_at">collection.published_at</h2>
+<p>Returns the date and time when the collection was published. You can set this information on the collection's page in your Shopify admin by the <strong>Set publish date</strong> calendar icon.</p><p>You can use a <a href="/en/themes/liquid/filters/additional-filters#date">date</a> filter to format the date.</p>
+<h2 id="collection-sort_by">collection.sort_by</h2>
+<p>Returns the sort order applied to the collection by the <code>sort_by</code> URL parameter. When there is no <code>sort_by</code> URL parameter, the value is <code>null</code>.</p>
+<p class="code-label">Example</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">/collections/widgets?sort_by=best-selling</code></pre></figure>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">sort_by</span><span class="w"> </span><span class="p">%}</span>
+  Sort by: <span class="p">{{</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">sort_by</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Sort by: best-selling</code></pre></figure>
+<h2 id="collection-sort_options">collection.sort_options</h2>
+<p>Returns an array of sorting options for the collection.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">&lt;select name="sort_by"&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">option</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">collection.sort_options</span><span class="w"> </span><span class="p">%}</span>
+  &lt;option value="<span class="p">{{</span><span class="w"> </span><span class="nv">option</span><span class="p">.</span><span class="nv">value</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">option</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/option&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/select&gt;</code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"sort_by"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"manual"</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"best-selling"</span><span class="nt">&gt;</span>Best selling<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"title-ascending"</span><span class="nt">&gt;</span>Alphabetically, A-Z<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"title-descending"</span><span class="nt">&gt;</span>Alphabetically, Z-A<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"price-ascending"</span><span class="nt">&gt;</span>Price, low to high<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"price-descending"</span><span class="nt">&gt;</span>Price, high to low<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"created-ascending"</span><span class="nt">&gt;</span>Date, old to new<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"created-descending"</span><span class="nt">&gt;</span>Date, new to old<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span></code></pre></figure>
+<h3 id="option-name">option.name</h3>
+<p>The customer-facing label for the sort option.</p><p>You can change the sort option labels shown to customers in the <a href="/en/manual/using-themes/change-the-layout/change-wording">language editor</a>.</p>
+<h3 id="option-value">option.value</h3>
+<p>The value of the sort option to be assigned to the <code>sort_by</code> property in a form submission.</p><p>You can identify the current sort option using <a href="#collection-sort_by">collection.sort_by</a>.</p>
+<p class="code-label">Example</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">&lt;option <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">option</span><span class="p">.</span><span class="nv">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">sort_by</span><span class="w"> </span><span class="p">%}</span>selected<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span> &gt;
+  ...
+&lt;/option&gt;</code></pre></figure>
+<h2 id="collection-template_suffix">collection.template_suffix</h2>
+<p>Returns the name of the custom collection template assigned to the collection, without the <code>collection.</code> prefix or the <code>.liquid</code> extension. Returns <code>nil</code> if a custom template is not assigned to the collection.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">template_suffix</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">no-price</code></pre></figure>
+<h2 id="collection-title">collection.title</h2>
+<p>Returns the title of the collection.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">&lt;h1&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">collection</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/h1&gt;</code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">&lt;h1&gt;Frontpage&lt;/h1&gt;</code></pre></figure>
+<h2 id="collection-tags">collection.tags</h2>
+<p>Returns the tags of products in a collection that match the current view. For example, if you are viewing a collection filtered by tag, <code>collection.tags</code> will return the tags for the products that match the current filter.</p>
+<h2 id="collection-url">collection.url</h2>
+<p>Returns the URL of the collection.</p>
+        </article>
+        <div id="Feedback" data-gid="06fc781d-6a32-4f36-829d-02818d4b5a6c"></div>
+</section></div>

@@ -1,0 +1,162 @@
+<html><head><link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet"/>
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet"/>
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css"/>
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+</head><body><div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <a class="dashingAutolink" name="autolink-140"></a><a class="dashAnchor" name="//apple_ref/cpp/Object/customer"></a><h1 class="article-title" data-swiftype-index="false">
+            customer
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Jan 23, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/customer.
+</div>
+
+
+
+
+            <p>The <code>customer</code> object contains information about a customer who has a <a href="en/manual/customers/customer-accounts">customer account</a>.</p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#where-and-when-is-it-defined">Where and when is it defined</a></li>
+<li><a href="#attributes">Attributes</a></li>
+<li><a href="#customer-accepts_marketing">customer.accepts_marketing</a></li>
+<li><a href="#customer-addresses">customer.addresses</a></li>
+<li><a href="#customer-addresses_count">customer.addresses_count</a></li>
+<li><a href="#customer-default_address">customer.default_address</a></li>
+<li><a href="#customer-email">customer.email</a></li>
+<li><a href="#customer-first_name">customer.first_name</a></li>
+<li><a href="#customer-has_account">customer.has_account</a></li>
+<li><a href="#customer-id">customer.id</a></li>
+<li><a href="#customer-last_name">customer.last_name</a></li>
+<li><a href="#customer-last_order">customer.last_order</a></li>
+<li><a href="#customer-name">customer.name</a></li>
+<li><a href="#customer-orders">customer.orders</a></li>
+<li><a href="#customer-orders_count">customer.orders_count</a></li>
+<li><a href="#customer-phone">customer.phone</a></li>
+<li><a href="#customer-tags">customer.tags</a></li>
+<li><a href="#customer-tax_exempt">customer.tax_exempt</a></li>
+<li><a href="#customer-total_spent">customer.total_spent</a></li>
+    </ul>
+
+    </div><a class="dashingAutolink" name="autolink-141"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/Where%20and%20when%20is%20it%20defined"></a><h2 id="where-and-when-is-it-defined">Where and when is it defined</h2>
+<p>The <code>customer</code> object is global in the sense that you can access it in all layout, template and snippet files. However, the object is only defined when a customer is logged-in. You can verify if a customer is logged-in with this code:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% if customer %}
+  Customer is logged in. You can access the customer
+  attributes such as {{ customer.first_name }}.
+{% endif %}</code></pre></figure>
+<p>If one is able to view a store page that lives under <code>/accounts</code> then one is logged-in, therefore you don&#39;t need to check if <code>customer</code> is defined in the templates <a href="en/themes/development/templates/customers-account">/customers/account.liquid</a>, <a href="en/themes/development/templates/customers-order">/customers/order.liquid</a> and <a href="en/themes/development/templates/customers-addresses">/customers/addresses.liquid</a> before you access the variable&#39;s attributes.</p><p>The <code>customer</code> variable can also be accessed in email templates, on the <a href="themes/customization/order-status/">order status page of the checkout</a>, as well as in apps such as <a href="en/manual/apps/apps-by-shopify/order-printer">Order Printer</a>.</p>
+<a class="dashingAutolink" name="autolink-142"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/Attributes"></a><h2 id="attributes">Attributes</h2>
+<p><a id="topofpage"></a></p>
+<a class="dashingAutolink" name="autolink-143"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.accepts_marketing"></a><h2 id="customer-accepts_marketing">customer.accepts_marketing</h2>
+<p>Returns <code>true</code> if the customer accepts marketing, returns <code>false</code> if the customer does not.</p>
+<a class="dashingAutolink" name="autolink-144"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.addresses"></a><h2 id="customer-addresses">customer.addresses</h2>
+<p>Returns an array of all addresses associated with a customer. See <a href="en/themes/liquid/objects/customer-address">customer_address</a> for a full list of available attributes.</p>
+<p class="input">Input</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for address in customer.addresses %}
+  {{ address.street }}
+{% endfor %}</code></pre></figure>
+</div>
+
+<p class="output">Output</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">126 York St, Suite 200 (Shopify Office)
+123 Fake St
+53 Featherston Lane</code></pre></figure>
+</div>
+
+<a class="dashingAutolink" name="autolink-145"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.addresses_count"></a><h2 id="customer-addresses_count">customer.addresses_count</h2>
+<p>Returns the number of addresses associated with a customer.</p>
+<a class="dashingAutolink" name="autolink-146"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.default_address"></a><h2 id="customer-default_address">customer.default_address</h2>
+<p>Returns the default <a href="en/themes/liquid/objects/customer-address">customer_address</a>.</p>
+<a class="dashingAutolink" name="autolink-147"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.email"></a><h2 id="customer-email">customer.email</h2>
+<p>Returns the email address of the customer.</p>
+<a class="dashingAutolink" name="autolink-148"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.first_name"></a><h2 id="customer-first_name">customer.first_name</h2>
+<p>Returns the first name of the customer.</p>
+<a class="dashingAutolink" name="autolink-149"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.has_account"></a><h2 id="customer-has_account">customer.has_account</h2>
+<p>Returns <code>true</code> if the email associated with an order is also tied to a <a href="en/manual/customers/customer-accounts">customer account</a>. Returns <code>false</code> if it is not. Helpful in email templates.  </p><aside class="note">
+  <h4>Note</h4>
+  <p>
+In a theme, <code>customer.has_account</code> will always return <code>true</code>. In the checkout, it can return <code>true</code> or <code>false</code>.</p>
+</aside>
+<a class="dashingAutolink" name="autolink-150"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.id"></a><h2 id="customer-id">customer.id</h2>
+<p>Returns the id of the customer.</p>
+<a class="dashingAutolink" name="autolink-151"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.last_name"></a><h2 id="customer-last_name">customer.last_name</h2>
+<p>Returns the last name of the customer.</p>
+<a class="dashingAutolink" name="autolink-152"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.last_order"></a><h2 id="customer-last_order">customer.last_order</h2>
+<p>Returns the last <a href="en/themes/liquid/objects/order">order</a> placed by the customer, not including test orders.</p>
+<p class="input">Input</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Your last order was placed on: {{ customer.last_order.created_at | date: &#34;%B %d, %Y %I:%M%p&#34; }}</code></pre></figure>
+</div>
+
+<p class="output">Output</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Your last order was placed on: April 25, 2014 01:49PM</code></pre></figure>
+</div>
+
+<a class="dashingAutolink" name="autolink-153"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.name"></a><h2 id="customer-name">customer.name</h2>
+<p>Returns the full name of the customer.</p>
+<a class="dashingAutolink" name="autolink-154"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.orders"></a><h2 id="customer-orders">customer.orders</h2>
+<p>Returns an array of all <a href="en/themes/liquid/objects/order">orders</a> placed by the customer.</p>
+<p class="input">Input</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for order in customer.orders %}
+{{ order.id }}
+{% endfor %}</code></pre></figure>
+</div>
+
+<p class="output">Output</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">#1088
+#1089
+#1090</code></pre></figure>
+</div>
+
+<a class="dashingAutolink" name="autolink-155"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.orders_count"></a><h2 id="customer-orders_count">customer.orders_count</h2>
+<p>Returns the total number of orders a customer has placed.</p>
+<a class="dashingAutolink" name="autolink-156"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.phone"></a><h2 id="customer-phone">customer.phone</h2>
+<p>Returns the phone number of the customer.</p>
+<a class="dashingAutolink" name="autolink-157"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.tags"></a><h2 id="customer-tags">customer.tags</h2>
+<p>Returns the list of tags associated with the customer.</p>
+<p class="input">Input</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for tag in customer.tags %}
+{{ tag }}
+{% endfor %}</code></pre></figure>
+</div>
+
+<p class="output">Output</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">wholesale regular-customer VIP</code></pre></figure>
+</div>
+
+<a class="dashingAutolink" name="autolink-158"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.tax_exempt"></a><h2 id="customer-tax_exempt">customer.tax_exempt</h2>
+<p>Returns whether or not the customer is exempt from taxes.</p>
+<a class="dashingAutolink" name="autolink-159"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/customer.total_spent"></a><h2 id="customer-total_spent">customer.total_spent</h2>
+<p>Returns the total amount spent on all orders.</p>
+        </article>
+        <div id="Feedback" data-gid="b1dc492f-3394-47f8-978d-f15c64fa2cb0"></div>
+</section></div></body></html>
