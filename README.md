@@ -1,3 +1,3 @@
 # Shopify Liquid Docset
 
-This is docset for use in Dash.
+This is a Shopify Liquid documentation docset for use in Dash.
