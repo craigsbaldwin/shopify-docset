@@ -1,0 +1,157 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            forloop
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/for-loops.
+</div>
+
+
+
+
+            <p>The <code>forloop</code> object contains attributes of its parent <a href="/en/themes/liquid/tags/iteration-tags#for">for</a> loop.</p>
+<aside class="note note-information">
+<h4>Tip</h4>
+<p>The <code>forloop</code> object can only be used within <a href="/en/themes/liquid/tags/iteration-tags#for">for</a> tags.</p>
+</aside>
+<p><a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#forloop-first">forloop.first</a></li>
+<li><a href="#forloop-index">forloop.index</a></li>
+<li><a href="#forloop-index0">forloop.index0</a></li>
+<li><a href="#forloop-last">forloop.last</a></li>
+<li><a href="#forloop-length">forloop.length</a></li>
+<li><a href="#forloop-rindex">forloop.rindex</a></li>
+<li><a href="#forloop-rindex0">forloop.rindex0</a></li>
+    </ul>
+
+    </div><h2 id="forloop-first">forloop.first</h2>
+<p>Returns <code>true</code> if it's the first iteration of the for loop. Returns <code>false</code> if it is not the first iteration.</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for product in collections.frontpage.products %}
+    {% if forloop.first == true %}
+        First time through!
+    {% else %}
+        Not the first time.
+    {% endif %}
+{% endfor %}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">First time through!
+Not the first time.
+Not the first time.
+Not the first time.
+Not the first time.</code></pre></figure>
+
+<h2 id="forloop-index">forloop.index</h2>
+<p>Returns the current index of the for loop, starting at 1.</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for product in collections.frontpage.products %}
+    {{ forloop.index }}
+{% else %}
+    // no products in your frontpage collection
+{% endfor %}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</code></pre></figure>
+
+<h2 id="forloop-index0">forloop.index0</h2>
+<p>Returns the current index of the for loop, starting at 0.</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for product in collections.frontpage.products %}
+  {{ forloop.index0 }}
+{% endfor %}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</code></pre></figure>
+
+<h2 id="forloop-last">forloop.last</h2>
+<p>Returns <code>true</code> if it's the last iteration of the for loop. Returns <code>false</code> if it is not the last iteration.</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for product in collections.frontpage.products %}
+    {% if forloop.last == true %}
+        This is the last iteration!
+    {% else %}
+        Keep going...
+    {% endif %}
+{% endfor %}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Keep going...
+Keep going...
+Keep going...
+Keep going...
+Keep going...
+This is the last iteration!</code></pre></figure>
+
+<h2 id="forloop-length">forloop.length</h2>
+<p>Returns the number of iterations of the loop.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">&lt;!-- if collections.frontpage.products contains 4 products --&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">product</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">collections.frontpage.products</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nb">forloop.first</span><span class="w"> </span><span class="p">%}</span>
+  &lt;p&gt;This collection has <span class="p">{{</span><span class="w"> </span><span class="nb">forloop.length</span><span class="w"> </span><span class="p">}}</span> products:&lt;/p&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+  &lt;p&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/p&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">This collection has 4 products:
+Apple
+Orange
+Peach
+Plum</code></pre></figure>
+<h2 id="forloop-rindex">forloop.rindex</h2>
+<p>Returns <a href="#index">forloop.index</a> in reverse order.</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for product in collections.frontpage.products %}
+    {{ forloop.rindex }}
+{% endfor %}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1</code></pre></figure>
+
+<h2 id="forloop-rindex0">forloop.rindex0</h2>
+<p>Returns <a href="#index0">forloop.index0</a> in reverse order.</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for product in collections.frontpage.products %}
+    {{ forloop.rindex0 }}
+{% endfor %}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0</code></pre></figure>
+
+        </article>
+        <div id="Feedback" data-gid="c2cca32f-b8dd-4b5e-80eb-cf9591fd7924"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>

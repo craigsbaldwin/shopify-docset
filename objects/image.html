@@ -1,0 +1,145 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            image
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/image.
+</div>
+
+
+
+
+            <p>The <code>image</code> object has the following attributes:</p><p><a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#image-alt">image.alt</a></li>
+<li><a href="#image-aspect_ratio">image.aspect_ratio</a></li>
+<li><a href="#image-attached_to_variant">image.attached_to_variant?</a></li>
+<li><a href="#image-height">image.height</a></li>
+<li><a href="#image-id">image.id</a></li>
+<li><a href="#image-media_type-plus">image.media_type (Plus)</a></li>
+<li><a href="#image-position">image.position</a></li>
+<li><a href="#image-preview_image-plus">image.preview_image (Plus)</a></li>
+<li><a href="#image-product_id">image.product_id</a></li>
+<li><a href="#image-src">image.src</a></li>
+<li><a href="#image-variants">image.variants</a></li>
+<li><a href="#image-width">image.width</a></li>
+    </ul>
+
+    </div><h2 id="image-alt">image.alt</h2>
+<p>Returns the alt tag of the image, set in the <a href="/en/manual/products/product-variant-images#add-alt-text-to-product-images">Products</a> page of the Admin.</p>
+<h2 id="image-aspect_ratio">image.aspect_ratio</h2>
+<p>Returns the aspect ratio (<code>width</code> / <code>height</code>) of the image.</p>
+<h2 id="image-attached_to_variant">image.attached_to_variant?</h2>
+<p>Returns <code>true</code> if the image has been associated with a variant. Returns <code>false</code> otherwise. This can be used in cases where you want to create a gallery of images that are not associated with variants.</p><aside class="note">
+  <h4>Note</h4>
+  <p>
+<code>attached_to_variants</code> is only returned when the image is associated with a product. It is not available when accessed through <code>product.media</code></p>
+</aside>
+<h2 id="image-height">image.height</h2>
+<p>Returns the height of the image in pixels.</p>
+<h2 id="image-id">image.id</h2>
+<p>Returns the id of the image.</p>
+<h2 id="image-media_type-plus">image.media_type (Plus)</h2>
+<p>Returns the type of the object (<code>image</code>). This can be used to filter the <code>product</code> object's media array.</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% assign images = product.media | where: "media_type", "image" %}
+{% for image in images %}
+  {{ image.alt }}
+{% endfor %}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Image of the black stroller
+
+Image of the grey stroller</code></pre></figure>
+<aside class="note">
+  <h4>Note</h4>
+  <p>
+<code>media_type</code> is returned only when the image is associated with a product and accessed through the <code>product.media</code> attribute.</p>
+</aside>
+<h2 id="image-position">image.position</h2>
+<p>Returns the position of the image in the <code>product</code> object's media array.</p><aside class="note">
+  <h4>Note</h4>
+  <p>
+<code>position</code> is returned only when the image is associated with a product.</p>
+</aside>
+<h2 id="image-preview_image-plus">image.preview_image (Plus)</h2>
+<p>Returns a preview image for the image.</p><aside class="note">
+  <h4>Note</h4>
+  <p>
+<code>preview_image</code> is returned only when the image is associated with a product and accessed through the <code>product.media</code> attribute.</p>
+</aside>
+<h2 id="image-product_id">image.product_id</h2>
+<p>Returns the id of the image's product.</p><aside class="note">
+  <h4>Note</h4>
+  <p>
+<code>product_id</code> is returned only when the image is associated with a product.</p>
+</aside>
+<h2 id="image-src">image.src</h2>
+<p>Returns the relative path of the product image. This is the same as outputting <code>{{ image }}</code>.</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for image in product.images %}
+    {{ image.src  }}
+    {{ image }}
+{% endfor %}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">products/my_image.jpg
+products/my_image.jpg</code></pre></figure>
+<p>To return the URL of the image on Shopify's Content Delivery Network (CDN), use the appropriate <a href="/en/themes/liquid/filters/url-filters">URL filter</a>.</p><p>To see a full list of available image sizes, see <a href="/en/themes/liquid/filters/url-filters#size-parameters">image size parameters</a>.</p><p>Shown below is an example of loading a product image using the <code>img_url</code> filter.</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{{ image | img_url: "medium" }}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">//cdn.shopify.com/s/files/1/0087/0462/products/shirt14_medium.jpeg?v=1309278311</code></pre></figure>
+
+<h2 id="image-variants">image.variants</h2>
+<p>Returns an array of attributes for the variant that the image is associated with.</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for image in product.images %}
+    {% for variant in image.variants %}
+            {{ image.src }} - used for the variant: {{ variant.title }}
+      {% endfor %}
+{% endfor %}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">products/red-shirt.jpeg - used for the variant: Red
+products/green-shirt.jpg - used for the variant: Green
+products/yellow-shirt.jpg - used for the variant: Yellow</code></pre></figure>
+<aside class="note">
+  <h4>Note</h4>
+  <p>
+<code>variants</code> is only returned when the image is associated with a product. It is not available when accessed through <code>product.media</code></p>
+</aside>
+<h2 id="image-width">image.width</h2>
+<p>Returns the width of the image in pixels.</p>
+        </article>
+        <div id="Feedback" data-gid="1063de74-fde1-47b4-a3d2-f9f4b3d62b61"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>

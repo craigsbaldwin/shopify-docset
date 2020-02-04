@@ -1,0 +1,108 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            discount_application
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/discount-application.
+</div>
+
+
+
+
+            <p>The <code>discount_application</code> object captures the intent of a discount applied on an order. The object can be accessed on <a href="/en/themes/development/templates/customers-order">customer order</a> and <a href="/en/manual/sell-online/notifications/edit-template">notification</a> templates. <a href="https://www.shopify.com/plus">Shopify Plus</a> merchants can also access properties of the <code>discount_allocation</code> object in the <a href="/themes/development/layouts/checkout-liquid">checkout.liquid</a> layout file.</p><aside class="note">
+  <h4>Note</h4>
+  <p>
+Attributes for money amounts, such as prices and totals, are in the customer's local (presentment) currency. Use a <a href="/en/themes/liquid/filters/money-filters">money filter</a> to show the result as a monetary amount.</p>
+</aside><p>The <code>discount_application</code> object has the following attributes:</p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#discount_application-target_selection">discount_application.target_selection</a></li>
+<li><a href="#discount_application-target_type">discount_application.target_type</a></li>
+<li><a href="#discount_application-title">discount_application.title</a></li>
+<li><a href="#discount_application-total_allocated_amount">discount_application.total_allocated_amount</a></li>
+<li><a href="#discount_application-type">discount_application.type</a></li>
+<li><a href="#discount_application-value">discount_application.value</a></li>
+<li><a href="#discount_application-value_type">discount_application.value_type</a></li>
+    </ul>
+
+    </div><h2 id="discount_application-target_selection">discount_application.target_selection</h2>
+<p>Describes how a discount selects line items in the cart to be discounted. <code>target_selection</code> has the following possible values:</p>
+<ul>
+<li>
+<code>all</code>: The discount applies to all line items.
+</li>
+<li>
+<code>entitled</code>: The discount applies to a particular subset of line items, often defined by a condition.
+</li>
+<li>
+<code>explicit</code>: The discount applies to a specifically selected line item or shipping line.
+</li>
+</ul>
+
+<h2 id="discount_application-target_type">discount_application.target_type</h2>
+<p>Describes the type of item that a discount applies to. <code>target_type</code> has the following possible values:</p>
+<ul>
+<li>
+<code>line_item</code>
+</li>
+<li>
+<code>shipping_line</code>
+</li>
+</ul>
+
+<h2 id="discount_application-title">discount_application.title</h2>
+<p>The customer-facing name of the discount. For example, <code>Welcome10</code> or <code>CBBWQQAKYBYY</code>.</p>
+<h2 id="discount_application-total_allocated_amount">discount_application.total_allocated_amount</h2>
+<p>The total amount that the price of an order is reduced by the discount.</p>
+<h2 id="discount_application-type">discount_application.type</h2>
+<p>The type of the discount. <code>type</code> has the following possible values:</p>
+<ul>
+<li>
+<code>automatic</code>
+</li>
+<li>
+<code>discount_code</code>
+</li>
+<li>
+<code>manual</code>
+</li>
+<li>
+<code>script</code>
+</li>
+</ul>
+
+<h2 id="discount_application-value">discount_application.value</h2>
+<p>The value of the discount.</p>
+<h2 id="discount_application-value_type">discount_application.value_type</h2>
+<p>The value type of the discount. <code>value_type</code> has the following possible values:</p>
+<ul>
+<li>
+<code>fixed_amount</code>
+</li>
+<li>
+<code>percentage</code>
+</li>
+</ul>
+
+        </article>
+        <div id="Feedback" data-gid="c021f3c9-7717-4593-80f0-460e2a1df31a"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>

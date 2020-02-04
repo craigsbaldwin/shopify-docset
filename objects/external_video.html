@@ -1,0 +1,74 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            external_video
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/external-video.
+</div>
+
+
+
+
+            <p>The <code>external_video</code> object can be accessed from the <a href="/en/themes/liquid/objects/product"><code>product</code></a> object's <code>media</code> attribute. It contains information about a YouTube video associated with a product.</p><p>This page describes the different attributes of the <code>external_video</code> object.</p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#external_video-alt">external_video.alt</a></li>
+<li><a href="#external_video-external_id">external_video.external_id</a></li>
+<li><a href="#external_video-host">external_video.host</a></li>
+<li><a href="#external_video-id">external_video.id</a></li>
+<li><a href="#external_video-media_type">external_video.media_type</a></li>
+<li><a href="#external_video-position">external_video.position</a></li>
+    </ul>
+
+    </div><h2 id="external_video-alt">external_video.alt</h2>
+<p>Returns the alt tag of the video set on the product details page of the Shopify admin.</p>
+<h2 id="external_video-external_id">external_video.external_id</h2>
+<p>Returns the ID of the YouTube video.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">external_videos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">media</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s2">"media_type"</span><span class="p">,</span><span class="w"> </span><span class="s2">"external_video"</span><span class="w"> </span><span class="p">%}</span>
+
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">external_video</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">external_videos</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{{</span><span class="w"> </span><span class="nv">external_video</span><span class="p">.</span><span class="nv">external_id</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">neFK-pv2sKY
+JthaEfEsLYg</code></pre></figure>
+<h2 id="external_video-host">external_video.host</h2>
+<p>Returns the name of the video host (<code>youtube</code>).</p>
+<h2 id="external_video-id">external_video.id</h2>
+<p>Returns the <code>media_id</code> of the external video.</p>
+<h2 id="external_video-media_type">external_video.media_type</h2>
+<p>Returns the type of the object (<code>external_video</code>). This can be used to filter the <code>product</code> object's media array.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">external_videos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">media</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s2">"media_type"</span><span class="p">,</span><span class="w"> </span><span class="s2">"external_video"</span><span class="w"> </span><span class="p">%}</span>
+
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">external_video</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">external_videos</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{{</span><span class="nv">external_video</span><span class="p">.</span><span class="nv">external_id</span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">neFK-pv2sKY
+JthaEfEsLYg</code></pre></figure>
+<h2 id="external_video-position">external_video.position</h2>
+<p>Returns the position of the external_video in the <code>product</code> object's media array.</p>
+        </article>
+        <div id="Feedback" data-gid="c7121018-f40e-4808-aa1b-9d8fbd16c90b"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>

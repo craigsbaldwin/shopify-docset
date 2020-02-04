@@ -1,0 +1,277 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            link
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/link.
+</div>
+
+
+
+
+            <p>The <code>link</code> object cannot be invoked on its own. It must be invoked inside a <a href="/en/themes/liquid/objects/linklist">linklist</a>.</p><p>The <code>link</code> object has the following attributes:</p><p><a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#link-active">link.active</a></li>
+<li><a href="#link-child_active">link.child_active</a></li>
+<li><a href="#link-current">link.current</a></li>
+<li><a href="#link-child_current">link.child_current</a></li>
+<li><a href="#link-levels">link.levels</a></li>
+<li><a href="#link-links">link.links</a></li>
+<li><a href="#link-object">link.object</a></li>
+<li><a href="#link-title">link.title</a></li>
+<li><a href="#link-type">link.type</a></li>
+<li><a href="#link-url">link.url</a></li>
+    </ul>
+
+    </div><h2 id="link-active">link.active</h2>
+<p>Returns <code>true</code> if the link object is active, or <code>false</code> if the link object is inactive.</p><p>A link is considered active if the resource it points to is part of the URL structure.  For example, if the current page is <code>/blogs/news/snowfall</code>, then the following links are active:</p>
+<ul>
+<li>
+<code>/blogs/news</code>, where the resource is the blog
+</li>
+<li>
+<code>/blogs/news/snowfall</code>, where the resource is the blog article
+</li>
+</ul>
+<p>Given the behavior of <code>link.active</code>, multiple links in a menu can have <code>link.active</code> be <code>true</code> at the same time, even when they have different values for <code>link.url</code>.</p><aside class="note tip">
+  <h4>Tip</h4>
+  <p>
+The <code>link.active</code> property is useful for menu designs that highlight when top-level navigation categories are being viewed. An example of this would be a menu that highlights the "News" blog link when an article from that blog is being read.</p>
+</aside>
+<h3 id="more-examples">More examples</h3>
+<p>If you're on a collection page that's filtered with tags, then a link that points to the unfiltered collection page still returns <code>true</code> for <code>link.active</code>. For example, if the URL is <code>collections/men/boots</code>, then the following links are active:</p>
+<ul>
+<li>
+<code>collections/men</code>, where the resource is the collection
+</li>
+<li>
+<code>collections/men/boots</code>, where the resource is the filtered collection
+</li>
+</ul>
+<p>If you're on a product page that's <a href="/en/themes/liquid/filters/url-filters#within">collection-aware</a>, then <code>link.active</code> returns <code>true</code> for both the collection-aware product URL and the collection-agnostic URL. For example, if the URL is <code>/products/awesome-product</code>, then the following links are active:</p>
+<ul>
+<li>
+<code>/products/awesome-product</code>
+</li>
+<li>
+<code>/collections/awesome-collection/products/awesome-product</code>
+</li>
+<li>
+<code>/collections/all/products/awesome-product</code>
+</li>
+</ul>
+
+<h2 id="link-child_active">link.child_active</h2>
+<p>Similar to <a href="#link-active"><code>link.active</code></a>, but returns <code>true</code> if a child link of the parent link is active, or <code>false</code> if no child links of the parent link are active.</p><p>This example shows the Liquid code and output for when the "Montreal" page is being viewed on a website. The example website has a the following main menu structure:</p><figure class="highlight"><pre><code class="language-text" data-lang="text">Main Menu
+  └ Home
+  └ About Us
+    └ Locations
+      └ Montreal
+      └ Ottawa</code></pre></figure>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">linklists</span><span class="p">.</span><span class="nv">main</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">link</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">linklists.main.links</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>: child_active: <span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">child_active</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">sub_link</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">link.links</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">sub_link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>: child_active: <span class="p">{{</span><span class="w"> </span><span class="nv">sub_link</span><span class="p">.</span><span class="nv">child_active</span><span class="w"> </span><span class="p">}}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">sub_sub_link</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">sub_link.links</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{{</span><span class="w"> </span><span class="nv">sub_sub_link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>: active: <span class="p">{{</span><span class="w"> </span><span class="nv">sub_sub_link</span><span class="p">.</span><span class="nv">active</span><span class="w"> </span><span class="p">}}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Main Menu
+
+Home: child_active: false
+About Us: child_active: true
+  In the news: child_active: false
+  Locations: child_active: true
+    Montreal: active: true
+    Ottawa: active: false</code></pre></figure>
+<h2 id="link-current">link.current</h2>
+<p>Returns <code>true</code> if the page content associated with the <code>link</code> is considered a match to the current page. Returns <code>false</code> if the content isn't considered a match.</p><p>The following example shows the Liquid code and output for when the <code>/collections/winter</code> page is being viewed. The example website has a <a href="/en/themes/liquid/objects/linklist">linklist</a> with the following three links:</p>
+<ul>
+<li>Summer collection, <code>/collections/summer</code>
+</li>
+<li>Winter collection, <code>/collections/winter</code>
+</li>
+<li>All products, <code>/collections/all</code>
+</li>
+</ul>
+
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">link</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">linklists.main.links</span><span class="w"> </span><span class="p">%}</span>
+  &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"
+    <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">current</span><span class="w"> </span><span class="p">%}</span>aria-current="page" class="highlight"<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+  &gt;
+   <span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+  &lt;/a&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/collections/summer"</span><span class="nt">&gt;</span>Summer collection<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/collections/winter"</span> <span class="na">aria-current=</span><span class="s">"page"</span> <span class="na">class=</span><span class="s">"highlight"</span><span class="nt">&gt;</span>Winter collection<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/collections/all"</span><span class="nt">&gt;</span>All products<span class="nt">&lt;/a&gt;</span></code></pre></figure><p>The <code>link.current</code> property doesn't identify exact URL matches between the current page’s URL and a <a href="#link-url"><code>link.url</code></a> value. There are two important behaviors to be aware of:</p>
+<ul>
+<li>
+<code>link.current</code> ignores URL parameters
+</li>
+<li>
+<code>link.current</code> treats product URLs and <a href="/en/themes/liquid/filters/url-filters#within">collection-aware</a> product URLs as matching page content
+</li>
+</ul>
+
+<h3 id="ignoring-url-parameters">Ignoring URL parameters</h3>
+<p>If the current page URL is <code>/collections/winter?sort_by=price_ascending</code>, then <code>link.current</code> is <code>true</code> for a link with a <code>link.url</code> of  <code>/collections/winter</code>.</p><p>This behavior is useful because a collection link that's highlighted in a menu should remain highlighted after the collection is reordered.</p>
+<h3 id="handling-collection-aware-product-urls">Handling collection-aware product URLs</h3>
+<p>If the current page URL is <code>/products/wool-gloves</code>, then <code>link.current</code> returns <code>true</code> on the following <code>link</code> objects:</p>
+<ul>
+<li>
+<code>/collections/gloves/products/wool-gloves</code>
+</li>
+<li>
+<code>/products/wool-gloves</code>
+</li>
+</ul>
+<p>This behavior is useful for reliably identifying when a product that's currently being viewed is in a menu. The content of the product page is often largely the same regardless of whether the link is <a href="/en/themes/liquid/filters/url-filters#within">collection-aware</a>.</p>
+<h2 id="link-child_current">link.child_current</h2>
+<p>Returns <code>true</code> if a child link has a <code>link</code> object with <a href="#link-current"><code>link.current</code></a> equal to <code>true</code>. Returns <code>false</code> if no child links have a <code>link</code> object with <code>link.current</code> equal to <code>true</code>.</p><p>This example shows the Liquid code and output for when the "Montreal" page is being viewed on a website. The example website has a the following main menu structure:</p><figure class="highlight"><pre><code class="language-text" data-lang="text">Main Menu
+  └ Home
+  └ About Us
+    └ Locations
+      └ Montreal
+      └ Ottawa</code></pre></figure>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">linklists</span><span class="p">.</span><span class="nv">main</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">link</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">linklists.main.links</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>: child_current: <span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">child_current</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">sub_link</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">link.links</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">sub_link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>: child_current: <span class="p">{{</span><span class="w"> </span><span class="nv">sub_link</span><span class="p">.</span><span class="nv">child_current</span><span class="w"> </span><span class="p">}}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">sub_sub_link</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">sub_link.links</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{{</span><span class="w"> </span><span class="nv">sub_sub_link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>: current: <span class="p">{{</span><span class="w"> </span><span class="nv">sub_sub_link</span><span class="p">.</span><span class="nv">current</span><span class="w"> </span><span class="p">}}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Main Menu
+
+Home: child_current: false
+About Us: child_current: true
+  In the news: child_current: false
+  Locations: child_current: true
+    Montreal: current: true
+    Ottawa: current: false</code></pre></figure>
+<h2 id="link-levels">link.levels</h2>
+<p>Returns the number of nested levels that a link contains.</p><p>For example, given the following main menu structure:</p><figure class="highlight"><pre><code class="language-text" data-lang="text">Main Menu
+  └ Home
+  └ About Us
+    └ Locations
+      └ Montreal
+      └ Ottawa</code></pre></figure><p>The following Liquid code:</p><figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">linklists</span><span class="p">.</span><span class="nv">main-menu</span><span class="w"> </span><span class="p">%}</span>
+
+<span class="p">{{</span><span class="w"> </span><span class="nv">menu</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>: <span class="p">{{</span><span class="w"> </span><span class="nv">menu</span><span class="p">.</span><span class="nv">levels</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">link</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">menu.links</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>: <span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">levels</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">sub_link</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">link.links</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">sub_link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>: <span class="p">{{</span><span class="w"> </span><span class="nv">sub_link</span><span class="p">.</span><span class="nv">levels</span><span class="w"> </span><span class="p">}}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">sub_sub_link</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">sub_link.links</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{{</span><span class="w"> </span><span class="nv">sub_sub_link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>: <span class="p">{{</span><span class="w"> </span><span class="nv">sub_sub_link</span><span class="p">.</span><span class="nv">levels</span><span class="w"> </span><span class="p">}}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure><p>produces the following output (edited for space):</p><figure class="highlight"><pre><code class="language-text" data-lang="text">Main Menu: 3
+  Home: 0
+  About Us: 2
+    Locations: 1
+      Montreal: 0
+      Ottawa: 0</code></pre></figure>
+<h2 id="link-links">link.links</h2>
+<p>Returns an array of the child links associated with the parent link.</p>
+<h2 id="link-object">link.object</h2>
+<p>Returns the variable associated to the link. The possible types are:</p>
+<ul>
+<li>
+<a href="/en/themes/liquid/objects/product">product</a>
+</li>
+<li>
+<a href="/en/themes/liquid/objects/collection">collection</a>
+</li>
+<li>
+<a href="/en/themes/liquid/objects/page">page</a>
+</li>
+<li>
+<a href="/en/themes/liquid/objects/blog">blog</a>
+</li>
+</ul>
+<p>Through <code>link.object</code>, you can access any of the attributes that are available in the above three variables.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">&lt;!-- If the product links to a product with a price of $10 --&gt;
+<span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">object</span><span class="p">.</span><span class="nv">price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$10</code></pre></figure>
+<h2 id="link-title">link.title</h2>
+
+<p>Returns the title of the link.</p>
+
+<h2 id="link-type">link.type</h2>
+<p>Returns the type of the link. The possible values are:</p>
+<ul>
+<li>
+<strong>blog_link</strong>: if the link points to a blog
+</li>
+<li>
+<strong>catalog_link</strong>: if the link points to the catalog page <code>/collections/all</code>
+</li>
+<li>
+<strong>collection_link</strong>: if the link points to a collection
+</li>
+<li>
+<strong>collections_link</strong>: if the link points to the collection list page <code>/collections</code>
+</li>
+<li>
+<strong>frontpage_link</strong>: if the link points to the home page <code>/</code>
+</li>
+<li>
+<strong>http_link</strong>: if the link points to an external web page, or a type or vendor collection (ex: <code>/collections/types?q=Pants</code>)
+</li>
+<li>
+<strong>page_link</strong>: if the link points to a page
+</li>
+<li>
+<strong>policy_link</strong>: if the link points to a policy page <code>/policies</code>
+</li>
+<li>
+<strong>product_link</strong>: if the link points to a product page
+</li>
+<li>
+<strong>search_link</strong>: if the link points to the search page <code>/search</code>
+</li>
+</ul>
+
+<h2 id="link-url">link.url</h2>
+
+<p>Returns the URL of the link.</p>
+
+        </article>
+        <div id="Feedback" data-gid="88adc0b5-eb5b-4ee7-80ba-89ca49caa7a0"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>

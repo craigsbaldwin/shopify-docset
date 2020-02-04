@@ -1,0 +1,205 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            line_item
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/line_item.
+</div>
+
+
+
+
+            <p>A <code>line_item</code> represents a single line in the shopping cart. There is one line item for each distinct product variant in the cart. The <code>line_item</code> object can be accessed in all Liquid templates via <code>cart.items</code>, in notification email templates via <code>line_items</code>, on the <a href="/en/manual/orders/status-tracking">order status page of the checkout</a>,
+as well as in apps such as <a href="/en/manual/apps/apps-by-shopify/order-printer">Order Printer</a>.</p><aside class="note">
+  <h4>Note</h4>
+  <p>
+Attributes for money amounts, such as prices and totals, are in the customer's local (presentment) currency. Use a <a href="/en/themes/liquid/filters/money-filters">money filter</a> to show the result as a monetary amount.</p>
+</aside><p>The <code>line_item</code> object has the following attributes:</p><p><a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#line_item-discount_allocations">line_item.discount_allocations</a></li>
+<li><a href="#line_item-final_line_price">line_item.final_line_price</a></li>
+<li><a href="#line_item-final_price">line_item.final_price</a></li>
+<li><a href="#line_item-fulfillment">line_item.fulfillment</a></li>
+<li><a href="#line_item-fulfillment_service">line_item.fulfillment_service</a></li>
+<li><a href="#line_item-gift_card">line_item.gift_card</a></li>
+<li><a href="#line_item-grams">line_item.grams</a></li>
+<li><a href="#line_item-image">line_item.image</a></li>
+<li><a href="#line_item-key">line_item.key</a></li>
+<li><a href="#line_item-line_level_discount_allocations">line_item.line_level_discount_allocations</a></li>
+<li><a href="#line_item-message">line_item.message</a></li>
+<li><a href="#line_item-options_with_values">line_item.options_with_values</a></li>
+<li><a href="#line_item-original_line_price">line_item.original_line_price</a></li>
+<li><a href="#line_item-original_price">line_item.original_price</a></li>
+<li><a href="#line_item-product">line_item.product</a></li>
+<li><a href="#line_item-product_id">line_item.product_id</a></li>
+<li><a href="#line_item-properties">line_item.properties</a></li>
+<li><a href="#line_item-quantity">line_item.quantity</a></li>
+<li><a href="#line_item-requires_shipping">line_item.requires_shipping</a></li>
+<li><a href="#line_item-sku">line_item.sku</a></li>
+<li><a href="#line_item-successfully_fulfilled_quantity">line_item.successfully_fulfilled_quantity</a></li>
+<li><a href="#line_item-taxable">line_item.taxable</a></li>
+<li><a href="#line_item-title">line_item.title</a></li>
+<li><a href="#line_item-line_level_total_discount">line_item.line_level_total_discount</a></li>
+<li><a href="#line_item-unit_price">line_item.unit_price</a></li>
+<li><a href="#line_item-unit_price_measurement">line_item.unit_price_measurement</a></li>
+<li><a href="#line_item-url">line_item.url</a></li>
+<li><a href="#line_item-variant">line_item.variant</a></li>
+<li><a href="#line_item-variant_id">line_item.variant_id</a></li>
+<li><a href="#line_item-vendor">line_item.vendor</a></li>
+<li><a href="#line_item-id">line_item.id</a></li>
+    </ul>
+
+    </div><h2 id="line_item-discount_allocations">line_item.discount_allocations</h2>
+<p>Returns a list of all <a href="/en/themes/liquid/objects/discount-allocation">discount allocations</a> containing the discounted amount and the reference to the parent discount application. <code>line_item.discount_allocations</code> is available on line items in carts, checkouts, orders, and draft orders.</p>
+<h2 id="line_item-final_line_price">line_item.final_line_price</h2>
+<p>Returns the combined price of all the items in the line item. This is equal to <code>line_item.final_price</code> times <code>line_item.quantity</code>.</p>
+<h2 id="line_item-final_price">line_item.final_price</h2>
+<p>Returns the price of the line item including all line level discount amounts.</p>
+<h2 id="line_item-fulfillment">line_item.fulfillment</h2>
+<p>Returns the <a href="/en/themes/liquid/objects/fulfillment">fulfillment</a> of the line item.</p>
+<h2 id="line_item-fulfillment_service">line_item.fulfillment_service</h2>
+<p>Returns the fulfillment service associated with the line item's variant. Line items that have no fulfillment service will return <code>manual</code>.</p>
+<h2 id="line_item-gift_card">line_item.gift_card</h2>
+<p>Returns <code>true</code> if the line item's product is a gift card, or <code>false</code> if it is not.</p>
+<h2 id="line_item-grams">line_item.grams</h2>
+<p>Returns the weight of the line item.
+Use the <a href="/en/themes/liquid/filters/additional-filters#weight_with_unit">weight_with_unit</a> filter to format the weight.</p>
+<h2 id="line_item-image">line_item.image</h2>
+<p>Returns the line item's image.</p><p>You can apply the <code>img_url</code> filter directly to the line item instead of its image attribute. This will generate a working image URL for any object with an image attribute (variant, product, line item, collection), image object, or image src. This is useful for line items, since it will output the item's variant image or the product's featured image if no variant image exists.</p><p>In the example, note that the output is the same no matter if <code>img_url</code> is used on <code>line_item</code> or <code>line_item.image</code>.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">line_item</span><span class="p">.</span><span class="nv">image</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">img_url</span><span class="p">:</span><span class="w"> </span><span class="s1">'100x100'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">img_tag</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{{</span><span class="w"> </span><span class="nv">line_item</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">img_url</span><span class="p">:</span><span class="w"> </span><span class="s1">'100x100'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">img_tag</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">&lt;img src="//cdn.shopify.com/s/files/1/0159/3350/products/hvt401_red_100x100.jpg?v=1398706734" /&gt;
+&lt;img src="//cdn.shopify.com/s/files/1/0159/3350/products/hvt401_red_100x100.jpg?v=1398706734" /&gt;</code></pre></figure>
+<h2 id="line_item-key">line_item.key</h2>
+<p>Returns the line item key, a unique identifier for the line item. The line item key is constructed from the line item's variant ID plus a hash of the line item's properties, even if the item has no additional properties.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">line_item</span><span class="p">.</span><span class="nv">key</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">17285644550:70ff98a797ed385f6ef25e6e974708ca</code></pre></figure>
+<h2 id="line_item-line_level_discount_allocations">line_item.line_level_discount_allocations</h2>
+<p>Returns a list of line-specific <a href="/en/themes/liquid/objects/discount-allocation">discount allocations</a> containing the discounted amount and the reference to the parent discount application. <code>line_item.discount_allocations</code> is available on line items in carts, checkouts, orders, and draft orders.</p>
+<h2 id="line_item-message">line_item.message</h2>
+<p>Returns the discount message if a script has applied a discount to the line item.</p><p>This attribute only has a value if you are using the <a href="/en/manual/apps/apps-by-shopify/script-editor">Script Editor</a> app.</p>
+<h2 id="line_item-options_with_values">line_item.options_with_values</h2>
+<p>Returns an array of selected values from the item's <a href="/en/themes/liquid/objects/product_option">product options</a>.</p><p>Elements in <code>line_item.options_with_values</code> can be displayed using a <code>for</code> loop. Each option is a key-value pair with <code>option.name</code> as the option and <code>option.value</code> as the option value.</p><aside class="note tip">
+  <h4>Tip</h4>
+  <p>
+You can check whether the line item has only a default variant by using <a href="/en/themes/liquid/objects/product#product-has_only_default_variant"><code>product.has_only_default_variant</code></a>. If it does, variant information should not be displayed because the product does not have custom variant options.</p>
+</aside>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">unless</span><span class="w"> </span><span class="nv">line_item</span><span class="p">.</span><span class="nv">product</span><span class="p">.</span><span class="nv">has_only_default_variant</span><span class="w"> </span><span class="p">%}</span>
+  &lt;ul&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">option</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">line_item.options_with_values</span><span class="w"> </span><span class="p">%}</span>
+      &lt;li&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">option</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>: <span class="p">{{</span><span class="w"> </span><span class="nv">option</span><span class="p">.</span><span class="nv">value</span><span class="w"> </span><span class="p">}}</span>&lt;/li&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+  &lt;/ul&gt;
+<span class="p">{%</span><span class="w"> </span><span class="kr">endunless</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">&lt;ul&gt;
+  &lt;li&gt;Size: 42mm&lt;/li&gt;
+  &lt;li&gt;Color: Silver&lt;/li&gt;
+  &lt;li&gt;Strap: Stainless Steel&lt;/li&gt;
+&lt;/ul&gt;</code></pre></figure>
+<h2 id="line_item-original_line_price">line_item.original_line_price</h2>
+<p>Returns the combined price of the quantity of items included in the line, before discounts were applied. This is equal to <code>line_item.original_price</code> multiplied by <code>line_item.quantity</code>.</p>
+<h2 id="line_item-original_price">line_item.original_price</h2>
+<p>Returns the original price of the line item before discounts were applied.</p>
+<h2 id="line_item-product">line_item.product</h2>
+<p>Returns the <a href="/en/themes/liquid/objects/product">product</a> of the line item.</p>
+<h2 id="line_item-product_id">line_item.product_id</h2>
+<p>Returns the ID of the line item's product.</p>
+<h2 id="line_item-properties">line_item.properties</h2>
+<p><code>line_item.properties</code> returns an array of custom information for an item that has been added to the cart.</p><p>You can capture line item properties on product pages to collect customization information for products, such as engraving text.</p><p>You add a line item property input on the product page by giving an input a <code>name</code> attribute with the following syntax:</p><figure class="highlight"><pre><code class="language-" data-lang="">properties[property-name]</code></pre></figure><p>Below is a basic example of how to use an HTML input of type "text" to capture customization information on the product page. You can also create a <code>line_item.properties</code> input by using the <a href="https://ui-elements-generator.myshopify.com/pages/line-item-property">Shopify UI elements generator</a>.</p><figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"engraving"</span><span class="nt">&gt;</span>Engraving<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"engraving"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"properties[Engraving]"</span><span class="nt">&gt;</span></code></pre></figure><p>When accessed, <code>line_item.properties</code> array elements will be displayed using a <code>for</code> loop.</p>
+<aside class="note note-information">
+<h4>Tip</h4>
+<p>The Liquid code first checks to ensure that the line_item.properties array is not empty. If the array is empty, the loop does not run and nothing is printed in the list.</p>
+</aside>
+
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">unless</span><span class="w"> </span><span class="nv">line_item</span><span class="p">.</span><span class="nv">properties</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">empty</span><span class="w"> </span><span class="p">%}</span>
+&lt;ul&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">property</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">line_item.properties</span><span class="w"> </span><span class="p">%}</span>
+  &lt;li&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">property</span><span class="p">.</span><span class="nf">first</span><span class="w"> </span><span class="p">}}</span>: <span class="p">{{</span><span class="w"> </span><span class="nv">property</span><span class="p">.</span><span class="nf">last</span><span class="w"> </span><span class="p">}}</span>&lt;/li&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+<span class="p">{%</span><span class="w"> </span><span class="kr">endunless</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">&lt;ul&gt;
+  &lt;li&gt;Monogram: My dog is the cutest&lt;/li&gt;
+  &lt;li&gt;Gift wrap: Yes&lt;/li&gt;
+&lt;/ul&gt;</code></pre></figure>
+<h2 id="line_item-quantity">line_item.quantity</h2>
+<p>Returns the quantity of the line item.</p>
+<h2 id="line_item-requires_shipping">line_item.requires_shipping</h2>
+<p>Returns <code>true</code> if the variant of the line item requires shipping, or <code>false</code> if it does not.</p>
+<h2 id="line_item-sku">line_item.sku</h2>
+<p>Returns the SKU (stock keeping unit) of the line item's variant.</p>
+<h2 id="line_item-successfully_fulfilled_quantity">line_item.successfully_fulfilled_quantity</h2>
+<p>Returns the successfully fulfilled quantity of the line item.</p>
+<h2 id="line_item-taxable">line_item.taxable</h2>
+<p>Returns <code>true</code> if taxes are charged on the line item's variant, or <code>false</code> if they are not.</p>
+<h2 id="line_item-title">line_item.title</h2>
+<p>Returns the title of the line item. <code>line_item.title</code> combines both the line item's <code>product.title</code> and the line item's <code>variant.title</code>, separated by a hyphen.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">line_item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">Balloon Shirt - Medium</code></pre></figure><p>To output just the product title or variant title, you can access the <code>title</code> of the respective variables.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">Product title: <span class="p">{{</span><span class="w"> </span><span class="nv">line_item</span><span class="p">.</span><span class="nv">product</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+Variant title: <span class="p">{{</span><span class="w"> </span><span class="nv">line_item</span><span class="p">.</span><span class="nv">variant</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">Product title: Balloon Shirt
+Variant title: Medium</code></pre></figure>
+<h2 id="line_item-line_level_total_discount">line_item.line_level_total_discount</h2>
+<p>Returns the total amount of all discounts applied to the line item specifically.
+This doesn't include discounts that are added to the cart.</p>
+<h2 id="line_item-unit_price">line_item.unit_price</h2>
+<aside class="note">
+  <h4>Note</h4>
+  <p>
+Unit prices are available only to stores located in Germany or France.</p>
+</aside><p>Returns the unit price of the line item. The price reflects any discounts that are applied to the line item.</p>
+<h2 id="line_item-unit_price_measurement">line_item.unit_price_measurement</h2>
+<p>Returns a <a href="/en/themes/liquid/objects/unit_price_measurement">unit_price_measurement object</a> for the line item.</p>
+<h2 id="line_item-url">line_item.url</h2>
+<p>Returns the relative URL of the line item's variant. The relative URL does not include your store's root URL (<code>mystore.myshopify.com</code>).</p>
+<h2 id="line_item-variant">line_item.variant</h2>
+<p>Returns the <a href="/en/themes/liquid/objects/variant">variant</a> of the line item.</p>
+<h2 id="line_item-variant_id">line_item.variant_id</h2>
+<p>Returns the ID of the line item's variant.</p>
+<h2 id="line_item-vendor">line_item.vendor</h2>
+<p>Returns the <a href="/manual/products/understanding-products">vendor</a> of the line item's product.</p>
+<h2 id="line_item-id">line_item.id</h2>
+<p>Returns the line item's ID.</p><p>The line item ID differs depending on the context:</p>
+<ul>
+<li><p><a href="/en/themes/liquid/objects/cart#cart-items"><code>cart.items</code></a> returns the ID of the line item's variant. This ID is not unique, and can be shared by multiple items of the same variant.</p></li>
+<li><p><a href="/en/themes/liquid/objects/checkout#checkout-line_items"><code>checkout.line_items</code></a> returns a temporary unique hash generated for the checkout.</p></li>
+<li><p><a href="/en/themes/liquid/objects/order#order-line_items"><code>order.line_items</code></a> returns a unique integer ID.</p></li>
+</ul>
+
+        </article>
+        <div id="Feedback" data-gid="67cc3f53-2e42-4aa5-a573-a5e2cad5b571"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>

@@ -11,7 +11,7 @@
 </head><body><div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
       <section class="section">
         <article class="article object" data-swiftype-index="true">
-          <a class="dashingAutolink" name="autolink-97"></a><a class="dashAnchor" name="//apple_ref/cpp/Object/checkout"></a><h1 class="article-title" data-swiftype-index="false">
+          <a class="dashingAutolink" name="autolink-68"></a><a class="dashAnchor" name="//apple_ref/cpp/Object/checkout"></a><h1 class="article-title" data-swiftype-index="false">
             checkout
 
           </h1>
@@ -66,13 +66,13 @@ Attributes for money amounts, such as prices and totals, are in the customer&#39
 <li><a href="#checkout-transactions">checkout.transactions</a></li>
     </ul>
 
-    </div><a class="dashingAutolink" name="autolink-68"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.applied_gift_cards"></a><h2 id="checkout-applied_gift_cards">checkout.applied_gift_cards</h2>
+    </div><a class="dashingAutolink" name="autolink-69"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.applied_gift_cards"></a><h2 id="checkout-applied_gift_cards">checkout.applied_gift_cards</h2>
 <p>Returns the <a href="en/themes/liquid/objects/gift-card">gift cards</a> applied to the checkout.</p>
-<a class="dashingAutolink" name="autolink-69"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.attributes"></a><h2 id="checkout-attributes">checkout.attributes</h2>
+<a class="dashingAutolink" name="autolink-70"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.attributes"></a><h2 id="checkout-attributes">checkout.attributes</h2>
 <p>Returns the attributes of the checkout, that were captured in the <a href="en/themes/liquid/objects/cart#cart-attributes">cart</a>.</p>
-<a class="dashingAutolink" name="autolink-70"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.billing_address"></a><h2 id="checkout-billing_address">checkout.billing_address</h2>
+<a class="dashingAutolink" name="autolink-71"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.billing_address"></a><h2 id="checkout-billing_address">checkout.billing_address</h2>
 <p>Returns the billing <a href="en/themes/liquid/objects/address">address</a> of the checkout.</p>
-<a class="dashingAutolink" name="autolink-71"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.buyer_accepts_marketing"></a><h2 id="checkout-buyer_accepts_marketing">checkout.buyer_accepts_marketing</h2>
+<a class="dashingAutolink" name="autolink-72"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.buyer_accepts_marketing"></a><h2 id="checkout-buyer_accepts_marketing">checkout.buyer_accepts_marketing</h2>
 <p>Returns whether the buyer accepted the newsletter during the checkout.</p>
 <p class="code-label">Input</p>
 
@@ -84,7 +84,7 @@ Thank you for subscribing to our newsletter. You will receive our exclusive news
 
 <div><figure class="highlight"><pre><code class="language-html" data-lang="html">Thank you for subscribing to our newsletter. You will receive our exclusive newsletter deals!</code></pre></figure></div>
 
-<a class="dashingAutolink" name="autolink-72"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.cart_level_discount_applications"></a><h2 id="checkout-cart_level_discount_applications">checkout.cart_level_discount_applications</h2>
+<a class="dashingAutolink" name="autolink-73"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.cart_level_discount_applications"></a><h2 id="checkout-cart_level_discount_applications">checkout.cart_level_discount_applications</h2>
 <p>Returns an array of any cart-specific <a href="en/themes/liquid/objects/discount-application">discount applications</a> for the checkout.</p>
 <p class="code-label">Input</p>
 <figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">discount_application</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">checkout.cart_level_discount_applications</span><span class="w"> </span><span class="p">%}</span>
@@ -94,9 +94,9 @@ Thank you for subscribing to our newsletter. You will receive our exclusive news
 <p class="code-label">Output</p>
 <figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">Discount name: SUMMER16
 Savings: -$20.00</code></pre></figure>
-<a class="dashingAutolink" name="autolink-73"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.customer"></a><h2 id="checkout-customer">checkout.customer</h2>
+<a class="dashingAutolink" name="autolink-74"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.customer"></a><h2 id="checkout-customer">checkout.customer</h2>
 <p>Returns the <a href="en/themes/liquid/objects/customer">customer</a> associated with the checkout.</p>
-<a class="dashingAutolink" name="autolink-74"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.discount_applications"></a><h2 id="checkout-discount_applications">checkout.discount_applications</h2>
+<a class="dashingAutolink" name="autolink-75"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.discount_applications"></a><h2 id="checkout-discount_applications">checkout.discount_applications</h2>
 <p>Returns an array of <a href="en/themes/liquid/objects/discount-application">discount applications</a> for a checkout.</p>
 <p class="code-label">Input</p>
 <figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">discount_application</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">checkout.discount_applications</span><span class="w"> </span><span class="p">%}</span>
@@ -106,7 +106,7 @@ Savings: -$20.00</code></pre></figure>
 <p class="code-label">Output</p>
 <figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">Discount name: SUMMER16
 Savings: -$20.00</code></pre></figure>
-<a class="dashingAutolink" name="autolink-75"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.discounts_amount"></a><h2 id="checkout-discounts_amount">checkout.discounts_amount</h2>
+<a class="dashingAutolink" name="autolink-76"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.discounts_amount"></a><h2 id="checkout-discounts_amount">checkout.discounts_amount</h2>
 <p>Returns the sum of the amount of the discounts applied to the checkout.</p>
 <p class="code-label">Input</p>
 
@@ -116,17 +116,17 @@ Savings: -$20.00</code></pre></figure>
 
 <div><figure class="highlight"><pre><code class="language-html" data-lang="html">You save: $12.00</code></pre></figure></div>
 
-<a class="dashingAutolink" name="autolink-76"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.discounts_savings"></a><h2 id="checkout-discounts_savings">checkout.discounts_savings</h2>
+<a class="dashingAutolink" name="autolink-77"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.discounts_savings"></a><h2 id="checkout-discounts_savings">checkout.discounts_savings</h2>
 <p>Returns the sum of the savings of the discounts applied to the checkout. The negative opposite of <a href="#checkout-discounts_amount">discounts_amount</a>.</p>
-<a class="dashingAutolink" name="autolink-77"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.email"></a><h2 id="checkout-email">checkout.email</h2>
+<a class="dashingAutolink" name="autolink-78"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.email"></a><h2 id="checkout-email">checkout.email</h2>
 <p>Returns the email used during the checkout.</p>
-<a class="dashingAutolink" name="autolink-78"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.gift_cards_amount"></a><h2 id="checkout-gift_cards_amount">checkout.gift_cards_amount</h2>
+<a class="dashingAutolink" name="autolink-79"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.gift_cards_amount"></a><h2 id="checkout-gift_cards_amount">checkout.gift_cards_amount</h2>
 <p>Returns the amount paid in gift cards of the checkout.</p>
-<a class="dashingAutolink" name="autolink-79"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.id"></a><h2 id="checkout-id">checkout.id</h2>
+<a class="dashingAutolink" name="autolink-80"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.id"></a><h2 id="checkout-id">checkout.id</h2>
 <p>Returns the id of the checkout.</p>
-<a class="dashingAutolink" name="autolink-80"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.line_items"></a><h2 id="checkout-line_items">checkout.line_items</h2>
+<a class="dashingAutolink" name="autolink-81"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.line_items"></a><h2 id="checkout-line_items">checkout.line_items</h2>
 <p>Returns all the <a href="en/themes/liquid/objects/line_item">line items</a> of the checkout.</p>
-<a class="dashingAutolink" name="autolink-81"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.line_items_subtotal_price"></a><h2 id="checkout-line_items_subtotal_price">checkout.line_items_subtotal_price</h2>
+<a class="dashingAutolink" name="autolink-82"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.line_items_subtotal_price"></a><h2 id="checkout-line_items_subtotal_price">checkout.line_items_subtotal_price</h2>
 <p>Returns the sum of the cart&#39;s line item prices after any line item discounts. The subtotal doesn&#39;t include taxes (unless taxes are included in the prices), cart discounts, or shipping costs.</p>
 <p class="code-label">Input</p>
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- subtotal = total dollar value of cart items - line item discount --&gt;</span>
@@ -134,19 +134,19 @@ Subtotal: {{ checkout.line_items_subtotal_price | money }}</code></pre></figure>
 <p class="code-label">Output</p>
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- for a cart containing a $500 product with a $50 line item discount --&gt;</span>
 Subtotal: $450.00</code></pre></figure>
-<a class="dashingAutolink" name="autolink-82"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.name"></a><h2 id="checkout-name">checkout.name</h2>
+<a class="dashingAutolink" name="autolink-83"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.name"></a><h2 id="checkout-name">checkout.name</h2>
 <p>Returns the name of the checkout. This value is identical to <code>checkout.id</code> with a hash prepended to it.</p>
-<a class="dashingAutolink" name="autolink-83"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.note"></a><h2 id="checkout-note">checkout.note</h2>
+<a class="dashingAutolink" name="autolink-84"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.note"></a><h2 id="checkout-note">checkout.note</h2>
 <p>Returns the note of the checkout.</p>
-<a class="dashingAutolink" name="autolink-84"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.order"></a><h2 id="checkout-order">checkout.order</h2>
+<a class="dashingAutolink" name="autolink-85"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.order"></a><h2 id="checkout-order">checkout.order</h2>
 <p>Returns the <a href="en/themes/liquid/objects/order">order</a> created by the checkout. Depending on the payment provider, the order might not have been created yet on the checkout order status page and this property could be nil.</p>
-<a class="dashingAutolink" name="autolink-85"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.order_id"></a><h2 id="checkout-order_id">checkout.order_id</h2>
+<a class="dashingAutolink" name="autolink-86"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.order_id"></a><h2 id="checkout-order_id">checkout.order_id</h2>
 <p>Returns the id of the order created by the checkout. Depending on the payment provider, the order might not have been created yet on the checkout order status page.</p>
-<a class="dashingAutolink" name="autolink-86"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.order_name"></a><h2 id="checkout-order_name">checkout.order_name</h2>
+<a class="dashingAutolink" name="autolink-87"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.order_name"></a><h2 id="checkout-order_name">checkout.order_name</h2>
 <p>Returns the name of the order created by the checkout. Depending on the payment provider, the order might not have been created yet on the checkout order status page.</p>
-<a class="dashingAutolink" name="autolink-87"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.order_number"></a><h2 id="checkout-order_number">checkout.order_number</h2>
+<a class="dashingAutolink" name="autolink-88"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.order_number"></a><h2 id="checkout-order_number">checkout.order_number</h2>
 <p>Returns the number of the order created by the checkout. Depending on the payment provider, the order might not have been created yet on the checkout order status page.</p>
-<a class="dashingAutolink" name="autolink-88"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.requires_shipping"></a><h2 id="checkout-requires_shipping">checkout.requires_shipping</h2>
+<a class="dashingAutolink" name="autolink-89"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.requires_shipping"></a><h2 id="checkout-requires_shipping">checkout.requires_shipping</h2>
 <p>Returns whether the checkout as a whole requires shipping, that is whether any of the <a href="#checkout-line_items">line items</a> require shipping.</p>
 <p class="code-label">Input</p>
 
@@ -158,11 +158,11 @@ You will receive an email with your shipment tracking number as soon as your ord
 
 <div><figure class="highlight"><pre><code class="language-html" data-lang="html">You will receive an email with your shipment tracking number as soon as your order is shipped.</code></pre></figure></div>
 
-<a class="dashingAutolink" name="autolink-89"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.shipping_address"></a><h2 id="checkout-shipping_address">checkout.shipping_address</h2>
+<a class="dashingAutolink" name="autolink-90"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.shipping_address"></a><h2 id="checkout-shipping_address">checkout.shipping_address</h2>
 <p>Returns the <a href="en/themes/liquid/objects/address">shipping address</a> of the checkout.</p>
-<a class="dashingAutolink" name="autolink-90"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.shipping_method"></a><h2 id="checkout-shipping_method">checkout.shipping_method</h2>
+<a class="dashingAutolink" name="autolink-91"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.shipping_method"></a><h2 id="checkout-shipping_method">checkout.shipping_method</h2>
 <p>Returns the <a href="en/themes/liquid/objects/shipping_method">shipping method</a> of the checkout.</p>
-<a class="dashingAutolink" name="autolink-91"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.shipping_methods"></a><h2 id="checkout-shipping_methods">checkout.shipping_methods</h2>
+<a class="dashingAutolink" name="autolink-92"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.shipping_methods"></a><h2 id="checkout-shipping_methods">checkout.shipping_methods</h2>
 <p>Returns an array of <a href="en/themes/liquid/objects/shipping_method">shipping methods</a> of the checkout.</p>
 <p class="code-label">Input</p>
 
@@ -176,13 +176,13 @@ You will receive an email with your shipment tracking number as soon as your ord
 <div><figure class="highlight"><pre><code class="language-html" data-lang="html">Shipping methods: <span class="nt">&lt;br&gt;</span>
 * International Shipping: $12.00</code></pre></figure></div>
 
-<a class="dashingAutolink" name="autolink-92"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.shipping_price"></a><h2 id="checkout-shipping_price">checkout.shipping_price</h2>
+<a class="dashingAutolink" name="autolink-93"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.shipping_price"></a><h2 id="checkout-shipping_price">checkout.shipping_price</h2>
 <p>Returns the shipping price of the checkout.</p>
-<a class="dashingAutolink" name="autolink-93"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.tax_lines"></a><h2 id="checkout-tax_lines">checkout.tax_lines</h2>
+<a class="dashingAutolink" name="autolink-94"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.tax_lines"></a><h2 id="checkout-tax_lines">checkout.tax_lines</h2>
 <p>Returns all the <a href="en/themes/liquid/objects/tax_line">tax lines</a> of the checkout.</p>
-<a class="dashingAutolink" name="autolink-94"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.tax_price"></a><h2 id="checkout-tax_price">checkout.tax_price</h2>
+<a class="dashingAutolink" name="autolink-95"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.tax_price"></a><h2 id="checkout-tax_price">checkout.tax_price</h2>
 <p>Returns the tax price of the checkout, whether the taxes are included or not in the prices.</p>
-<a class="dashingAutolink" name="autolink-95"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.total_price"></a><h2 id="checkout-total_price">checkout.total_price</h2>
+<a class="dashingAutolink" name="autolink-96"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.total_price"></a><h2 id="checkout-total_price">checkout.total_price</h2>
 <p>Returns the total price of the checkout.</p>
 <p class="code-label">Input</p>
 
@@ -194,7 +194,7 @@ Total: {{ checkout.total_price | money }}</code></pre></figure></div>
 <div><figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- For a $500 product with a $50 discount, $10 shipping, and a tax rate of 20% --&gt;</span>
 Total: $552.00</code></pre></figure></div>
 
-<a class="dashingAutolink" name="autolink-96"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.transactions"></a><h2 id="checkout-transactions">checkout.transactions</h2>
+<a class="dashingAutolink" name="autolink-97"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/checkout.transactions"></a><h2 id="checkout-transactions">checkout.transactions</h2>
 <p>Returns an array of <a href="en/themes/liquid/objects/transaction">transactions</a> from the checkout.</p>
         </article>
         <div id="Feedback" data-gid="4d98902f-8328-42a0-a00b-3a6d86532fdb"></div>

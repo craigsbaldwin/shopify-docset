@@ -1,0 +1,106 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            fulfillment
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/fulfillment.
+</div>
+
+
+
+
+            <p>The <code>fulfillment</code> object has the following attributes:</p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#fulfillment-fulfillment_line_items">fulfillment.fulfillment_line_items</a></li>
+<li><a href="#fulfillment-item_count">fulfillment.item_count</a></li>
+<li><a href="#fulfillment-tracking_company">fulfillment.tracking_company</a></li>
+<li><a href="#fulfillment-tracking_number">fulfillment.tracking_number</a></li>
+<li><a href="#fulfillment-tracking_url">fulfillment.tracking_url</a></li>
+    </ul>
+
+    </div><h2 id="fulfillment-fulfillment_line_items">fulfillment.fulfillment_line_items</h2>
+<p>Returns an array of all <a href="/en/themes/liquid/objects/line_item">line items</a> and their quantity included in the fulfillment. Any line items that have already been fulfilled, or are yet to be fulfilled, will not be included in the array.</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">We have fulfilled the following items:
+<span class="nt">&lt;ul&gt;</span>
+{% for line in fulfillment.fulfillment_line_items %}
+  <span class="nt">&lt;li&gt;</span>{{ line.line_item.title }} x {{ line.quantity }}<span class="nt">&lt;/li&gt;</span>
+{% endfor %}
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">We have fulfilled the following items:
+* T-shirt - White / Medium x 8
+* Adorable boots x 1</code></pre></figure>
+
+<h2 id="fulfillment-item_count">fulfillment.item_count</h2>
+<p>Returns the total number of items included in the fulfillment.</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">We have fulfilled {{ fulfillment.item_count }} items of your recent order.</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">We have fulfilled 9 items of your recent order.</code></pre></figure>
+
+<h2 id="fulfillment-tracking_company">fulfillment.tracking_company</h2>
+
+<p>Returns the name of the fulfillment service.</p>
+
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Tracking Company: {{ fulfillment.tracking_company }}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Tracking Company: Tracktor</code></pre></figure>
+
+<h2 id="fulfillment-tracking_number">fulfillment.tracking_number</h2>
+
+<p>Returns a fulfillment's tracking number, if it exists.</p>
+
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Tracking Number: {{ fulfillment.tracking_number }}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Tracking Number: 1Z5F44813600X02768</code></pre></figure>
+
+<h2 id="fulfillment-tracking_url">fulfillment.tracking_url</h2>
+
+<p>Returns the URL for a tracking number.</p>
+
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{{ fulfillment.tracking_url }}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">http://wwwapps.ups.com/etracking/tracking.cgi?InquiryNumber1=1Z5F44813600X02768<span class="err">&amp;</span>TypeOfInquiryNumber=T<span class="err">&amp;</span>AcceptUPSLicenseAgreement=yes<span class="err">&amp;</span>submit=Track</code></pre></figure>
+
+        </article>
+        <div id="Feedback" data-gid="cb8a3fe8-83bd-4be3-a46a-09e3026d10bf"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>

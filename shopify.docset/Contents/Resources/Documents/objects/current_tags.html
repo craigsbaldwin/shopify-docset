@@ -11,7 +11,7 @@
 </head><body><div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
       <section class="section">
         <article class="article object" data-swiftype-index="true">
-          <a class="dashingAutolink" name="autolink-139"></a><a class="dashAnchor" name="//apple_ref/cpp/Object/current_tags"></a><h1 class="article-title" data-swiftype-index="false">
+          <a class="dashingAutolink" name="autolink-137"></a><a class="dashAnchor" name="//apple_ref/cpp/Object/current_tags"></a><h1 class="article-title" data-swiftype-index="false">
             current_tags
 
           </h1>
@@ -40,7 +40,7 @@
 <li><a href="#inside-blog-liquid">Inside blog.liquid</a></li>
     </ul>
 
-    </div><a class="dashingAutolink" name="autolink-137"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/Inside%20collection.liquid"></a><h2 id="inside-collection-liquid">Inside collection.liquid</h2>
+    </div><a class="dashingAutolink" name="autolink-138"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/Inside%20collection.liquid"></a><h2 id="inside-collection-liquid">Inside collection.liquid</h2>
 <p>Inside collection.liquid, <code>current_tags</code> contains all <strong>product tags</strong> that are used to filter a collection.</p><p>The example below creates a list that displays every tag within every product in a collection.  If the collection is filtered by the tag (i.e. if <code>current_tags</code> <strong>does</strong> contain the tag), the link will remove the filter. If the collection is not currently filtered by the tag (if <code>current_tags</code> <strong>does not</strong> contain the tag), a link will appear to allow the user to do so.</p>
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul&gt;</span>
 {% for tag in collection.all_tags %}
@@ -52,7 +52,7 @@
 {% endfor %}
 <span class="nt">&lt;/ul&gt;</span></code></pre></figure>
 
-<a class="dashingAutolink" name="autolink-138"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/Inside%20blog.liquid"></a><h2 id="inside-blog-liquid">Inside blog.liquid</h2>
+<a class="dashingAutolink" name="autolink-139"></a><a class="dashAnchor" name="//apple_ref/cpp/Attribute/Inside%20blog.liquid"></a><h2 id="inside-blog-liquid">Inside blog.liquid</h2>
 <p>Inside blog.liquid,  <code>current_tags</code> contains all <strong>article</strong> tags that are used to filter the blog.</p><p>The example below adds a breadcrumb that shows which article tag is being used to filter a blog.  If there is a tag being used to filter a blog, the breadcrumb displays the tag name and  provides a link back to the unfiltered blog.</p>
 <figure class="highlight"><pre><code class="language-html" data-lang="html">{% if current_tags %}
   <span class="nt">&lt;h1&gt;</span>{{ blog.title | link_to: blog.url }} <span class="ni">&amp;raquo;</span> {{ current_tags.first }}<span class="nt">&lt;/h1&gt;</span>

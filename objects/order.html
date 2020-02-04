@@ -1,0 +1,284 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article ibject" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            order
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/order.
+</div>
+
+
+
+
+            <p>You can access the <code>order</code> object in a theme's Liquid templates with <code>customer.orders</code>.</p><aside class="note">
+  <h4>Note</h4>
+  <p>
+Attributes for money amounts, such as prices and totals, are in the customer's local (presentment) currency. Use a <a href="/en/themes/liquid/filters/money-filters">money filter</a> to show the result as a monetary amount.</p>
+</aside><p>The <code>order</code> object has the following attributes:</p><p><a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#order-attributes">order.attributes</a></li>
+<li><a href="#order-billing_address">order.billing_address</a></li>
+<li><a href="#order-cancelled">order.cancelled</a></li>
+<li><a href="#order-cancelled_at">order.cancelled_at</a></li>
+<li><a href="#order-cancel_reason">order.cancel_reason</a></li>
+<li><a href="#order-cancel_reason_label">order.cancel_reason_label</a></li>
+<li><a href="#order-cart_level_discount_applications">order.cart_level_discount_applications</a></li>
+<li><a href="#order-created_at">order.created_at</a></li>
+<li><a href="#order-customer">order.customer</a></li>
+<li><a href="#order-customer_url">order.customer_url</a></li>
+<li><a href="#order-discount_applications">order.discount_applications</a></li>
+<li><a href="#order-email">order.email</a></li>
+<li><a href="#order-financial_status">order.financial_status</a></li>
+<li><a href="#order-financial_status_label">order.financial_status_label</a></li>
+<li><a href="#order-fulfillment_status">order.fulfillment_status</a></li>
+<li><a href="#order-fulfillment_status_label">order.fulfillment_status_label</a></li>
+<li><a href="#order-line_items">order.line_items</a></li>
+<li><a href="#order-line_items_subtotal_price">order.line_items_subtotal_price</a></li>
+<li><a href="#order-location">order.location</a></li>
+<li><a href="#order-name">order.name</a></li>
+<li><a href="#order-note">order.note</a></li>
+<li><a href="#order-order_number">order.order_number</a></li>
+<li><a href="#order-order_status_url">order.order_status_url</a></li>
+<li><a href="#order-phone">order.phone</a></li>
+<li><a href="#order-shipping_address">order.shipping_address</a></li>
+<li><a href="#order-shipping_methods">order.shipping_methods</a></li>
+<li><a href="#order-shipping_price">order.shipping_price</a></li>
+<li><a href="#order-subtotal_price">order.subtotal_price</a></li>
+<li><a href="#order-tags">order.tags</a></li>
+<li><a href="#order-tax_lines">order.tax_lines</a></li>
+<li><a href="#order-tax_price">order.tax_price</a></li>
+<li><a href="#order-total_discounts">order.total_discounts</a></li>
+<li><a href="#order-total_net_amount">order.total_net_amount</a></li>
+<li><a href="#order-total_price">order.total_price</a></li>
+<li><a href="#order-total_refunded_amount">order.total_refunded_amount</a></li>
+<li><a href="#order-transactions">order.transactions</a></li>
+    </ul>
+
+    </div><h2 id="order-attributes">order.attributes</h2>
+<p>Returns the custom cart attributes for the order, if there are any. You can <a href="/en/themes/liquid/objects/cart#cart-attributes">add as many custom attributes to your cart</a> as you like.</p><p>When you're looping through attributes, use <code>{{ attribute | first }}</code> to get the name of the attribute, and <code>{{ attribute | last }}</code> to get its value.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">order</span><span class="p">.</span><span class="nv">attributes</span><span class="w"> </span><span class="p">%}</span>
+  &lt;p&gt;Order notes:&lt;/p&gt;
+  &lt;ul&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">attribute</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">order.attributes</span><span class="w"> </span><span class="p">%}</span>
+      &lt;li&gt;&lt;strong&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">attribute</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">first</span><span class="w"> </span><span class="p">}}</span>&lt;/strong&gt;: <span class="p">{{</span><span class="w"> </span><span class="nv">attribute</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">last</span><span class="w"> </span><span class="p">}}</span>&lt;/li&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+  &lt;/ul&gt;
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>Order notes:<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;strong&gt;</span>Message to merchant<span class="nt">&lt;/strong&gt;</span>: I love your products! Thanks!<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+<h2 id="order-billing_address">order.billing_address</h2>
+<p>Returns the billing <a href="/en/themes/liquid/objects/address">address</a> of the order.</p>
+<h2 id="order-cancelled">order.cancelled</h2>
+<p>Returns <code>true</code> if an order is canceled, or <code>false</code> if it is not.</p>
+<h2 id="order-cancelled_at">order.cancelled_at</h2>
+<p>Returns the timestamp of when an order was canceled. Use the <a href="/en/themes/liquid/filters/additional-filters#date">date</a> filter to format the timestamp.</p>
+<h2 id="order-cancel_reason">order.cancel_reason</h2>
+<p>Returns one of the following cancellation reasons, if an order was canceled:</p>
+<ul>
+<li>items unavailable
+</li>
+<li>fraudulent order
+</li>
+<li>customer changed/cancelled order
+</li>
+<li>other.
+</li>
+</ul>
+
+<h2 id="order-cancel_reason_label">order.cancel_reason_label</h2>
+<p>Returns the translated output of an order's <a href="#order-cancel_reason">order.cancel_reason</a>.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">English: <span class="p">{{</span><span class="w"> </span><span class="nv">order</span><span class="p">.</span><span class="nv">cancel_reason</span><span class="w"> </span><span class="p">}}</span>
+French: <span class="p">{{</span><span class="w"> </span><span class="nv">order</span><span class="p">.</span><span class="nv">cancel_reason_label</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">English: Items unavailable
+French: Produits indisponibles</code></pre></figure>
+<h2 id="order-cart_level_discount_applications">order.cart_level_discount_applications</h2>
+<p>Returns an array of order-specific <a href="/en/themes/liquid/objects/discount-application">discount applications</a> for an order.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">discount_application</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">order.cart_level_discount_applications</span><span class="w"> </span><span class="p">%}</span>
+  Discount name: <span class="p">{{</span><span class="w"> </span><span class="nv">discount_application</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+  Savings: -<span class="p">{{</span><span class="w"> </span><span class="nv">discount_application</span><span class="p">.</span><span class="nv">total_allocated_amount</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">Discount name: SUMMER16
+Savings: -$20.00</code></pre></figure>
+<h2 id="order-created_at">order.created_at</h2>
+<p>Returns the timestamp of when an order was created. Use the <a href="/en/themes/liquid/filters/additional-filters#date">date</a> filter to format the timestamp.</p>
+<h2 id="order-customer">order.customer</h2>
+<p>Returns the <a href="/en/themes/liquid/objects/customer">customer</a> associated with the order.</p>
+<h2 id="order-customer_url">order.customer_url</h2>
+<p>Returns a unique URL that the customer can use to access the order.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">order</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">link_to</span><span class="p">:</span><span class="w"> </span><span class="nv">order</span><span class="p">.</span><span class="nv">customer_url</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://johns-apparel.myshopify.com/account/orders/d94ec4a1956f423dc4907167c9ef0413"</span><span class="nt">&gt;</span>#1235<span class="nt">&lt;/a&gt;</span></code></pre></figure>
+<h2 id="order-discount_applications">order.discount_applications</h2>
+<p>Returns an array of <a href="/en/themes/liquid/objects/discount-application">discount applications</a> for an order.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">discount_application</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">order.discount_applications</span><span class="w"> </span><span class="p">%}</span>
+  Discount name: <span class="p">{{</span><span class="w"> </span><span class="nv">discount_application</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+  Savings: -<span class="p">{{</span><span class="w"> </span><span class="nv">discount_application</span><span class="p">.</span><span class="nv">total_allocated_amount</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">Discount name: SUMMER16
+Savings: -$20.00</code></pre></figure>
+<h2 id="order-email">order.email</h2>
+<p>Returns the email address associated with an order, if it exists.</p>
+<h2 id="order-financial_status">order.financial_status</h2>
+<p>Returns the financial status of an order. The possible values are:</p>
+<ul>
+<li>
+<code>pending</code>
+</li>
+<li>
+<code>authorized</code>
+</li>
+<li>
+<code>paid</code>
+</li>
+<li>
+<code>partially_paid</code>
+</li>
+<li>
+<code>refunded</code>
+</li>
+<li>
+<code>partially_refunded</code>
+</li>
+<li>
+<code>voided</code>
+</li>
+</ul>
+
+<h2 id="order-financial_status_label">order.financial_status_label</h2>
+<p>Returns the translated output of an order's <a href="#order-financial_status">financial_status</a>.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">English: <span class="p">{{</span><span class="w"> </span><span class="nv">order</span><span class="p">.</span><span class="nv">financial_status</span><span class="w"> </span><span class="p">}}</span>
+French: <span class="p">{{</span><span class="w"> </span><span class="nv">order</span><span class="p">.</span><span class="nv">financial_status_label</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">English: Paid
+French: Payée</code></pre></figure>
+<h2 id="order-fulfillment_status">order.fulfillment_status</h2>
+<p>Returns the fulfillment status of an order.</p>
+<h2 id="order-fulfillment_status_label">order.fulfillment_status_label</h2>
+<p>Returns the translated output of an order's <a href="#order-fulfillment_status">fulfillment_status</a>.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">English: <span class="p">{{</span><span class="w"> </span><span class="nv">order</span><span class="p">.</span><span class="nv">fulfillment_status</span><span class="w"> </span><span class="p">}}</span>
+French: <span class="p">{{</span><span class="w"> </span><span class="nv">order</span><span class="p">.</span><span class="nv">fulfillment_status_label</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">English: Unfulfilled
+French: Non confirmée</code></pre></figure>
+<h2 id="order-line_items">order.line_items</h2>
+<p>Returns an array of <a href="/en/themes/liquid/objects/line_item">line items</a> for the order.</p>
+<h2 id="order-line_items_subtotal_price">order.line_items_subtotal_price</h2>
+<p>Returns the sum of the order's line-item prices after any line item discounts have been applied. The subtotal amount doesn't include cart discounts, taxes (unless taxes are included in the prices), or shipping costs.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- subtotal = total dollar value of cart items - line item discount --&gt;</span>
+Subtotal: {{ order.line_items_subtotal_price | money }}</code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- for a cart containing a $500 product with a $50 line item discount --&gt;</span>
+Subtotal: $450.00</code></pre></figure><aside class="note">
+  <h4>Note</h4>
+  <p>For a subtotal amount that includes all types of discounts, see <a href="#order-subtotal_price">order.subtotal_price</a>.</p>
+</aside>
+<h2 id="order-location">order.location</h2>
+<p>(<strong>POS only</strong>) Returns the physical location of the order.
+You can configure locations in the <a href="//www.shopify.com/admin/settings/locations">Locations settings</a> of your Shopify admin.</p>
+<h2 id="order-name">order.name</h2>
+<p>Returns the name of the order in the format set in the <strong>Standards and formats</strong> section of the <a href="//www.shopify.com/admin/settings/general">General settings</a> of your Shopify admin.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">order</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">#1025</code></pre></figure>
+<h2 id="order-note">order.note</h2>
+<p>Returns the note associated with a customer order.</p>
+<aside class="note note-information">
+<h4>Tip</h4>
+<p>To show an order note in an email notification or an Order Printer template, use <code>{{ note }}</code>.
+To show an order note in a template file like customers/account.liquid, use <code>{{ order.note }}</code>.</p>
+</aside>
+
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">Special instructions: <span class="p">{{</span><span class="w"> </span><span class="nv">order</span><span class="p">.</span><span class="nv">note</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">Special instructions: Please deliver after 5 PM</code></pre></figure>
+<h2 id="order-order_number">order.order_number</h2>
+<p>Returns the integer representation of the order name.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">order</span><span class="p">.</span><span class="nv">order_number</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">1025</code></pre></figure>
+<h2 id="order-order_status_url">order.order_status_url</h2>
+<p>Returns the unique URL for the <a href="/en/manual/orders/status-tracking">order status page</a> of the order.</p>
+<h2 id="order-phone">order.phone</h2>
+<p>Returns the phone number associated with an order, if it exists.</p>
+<h2 id="order-shipping_address">order.shipping_address</h2>
+<p>Returns the shipping <a href="/en/themes/liquid/objects/address">address</a> of the order.</p>
+<h2 id="order-shipping_methods">order.shipping_methods</h2>
+<p>Returns an array of <a href="/en/themes/liquid/objects/shipping_method">shipping_method</a> variables from the order.</p>
+<h2 id="order-shipping_price">order.shipping_price</h2>
+<p>Returns the shipping price of an order.</p>
+<h2 id="order-subtotal_price">order.subtotal_price</h2>
+<p>Returns the subtotal price of all the items in the order after both line-item and cart discounts have been applied. The subtotal doesn't include taxes (unless taxes are included in the prices) or shipping costs.</p><aside class="note">
+  <h4>Note</h4>
+  <p>For a subtotal amount that includes line-item discounts only, see <a href="#order-line_items_subtotal_price">order.line_items_subtotal_price</a>.</p>
+</aside>
+<h2 id="order-tags">order.tags</h2>
+<p>Returns an array of all of the order's tags. The tags are returned in alphabetical order.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">order.tags</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">new
+leather
+sale
+special</code></pre></figure>
+<h2 id="order-tax_lines">order.tax_lines</h2>
+<p>Returns an array of <a href="/en/themes/liquid/objects/tax_line">tax_line</a> variables for an order.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">tax_line</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">order.tax_lines</span><span class="w"> </span><span class="p">%}</span>
+  Tax (<span class="p">{{</span><span class="w"> </span><span class="nv">tax_line</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span> <span class="p">{{</span><span class="w"> </span><span class="nv">tax_line</span><span class="p">.</span><span class="nv">rate</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">times</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">}}</span>%): <span class="p">{{</span><span class="w"> </span><span class="nv">tax_line</span><span class="p">.</span><span class="nv">price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">Tax (GST 14.0%): $25</code></pre></figure>
+<h2 id="order-tax_price">order.tax_price</h2>
+<p>Returns the order's tax price.</p>
+<h2 id="order-total_discounts">order.total_discounts</h2>
+<p>Returns the total value of all discounts applied to the order.</p>
+<h2 id="order-total_net_amount">order.total_net_amount</h2>
+<p>Returns the net amount of the order.</p><p>The <code>order.total_net_amount</code> is calculated after refunds are applied. The value is equivalent to <a href="#order-total_price"><code>order.total_price</code></a> minus <a href="#order-total_refunded_amount"><code>order.total_refunded_amount</code></a>.</p>
+<h2 id="order-total_price">order.total_price</h2>
+<p>Returns the total price of an order.</p><p>The <code>order.total_price</code> amount is calculated before refunds are applied. To get the value of refunds,
+use the <a href="#order-total_refunded_amount"><code>order.total_refunded_amount</code></a> property.</p>
+<h2 id="order-total_refunded_amount">order.total_refunded_amount</h2>
+<p>Returns the total refunded amount of an order.</p>
+<h2 id="order-transactions">order.transactions</h2>
+<p>Returns an array of <a href="/en/themes/liquid/objects/transaction">transactions</a> from the order.</p>
+        </article>
+        <div id="Feedback" data-gid="d3ec7a18-0566-407f-a5c7-0bb529f826d8"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>

@@ -1,0 +1,192 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            metafield
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/metafield.
+</div>
+
+
+
+
+            <p>The <code>metafields</code> object allows you to store additional information for products, collections, customers,  orders, blogs, pages and your shop. You can output metafields on your storefront using Liquid.</p><p>There are several apps in the <a href="//apps.shopify.com/search/query?utf8=%E2%9C%93&amp;q=metafield">Shopify App Store</a> that you can use to  manage your metafields.</p><p>A metafield consists of a namespace, a key, a value, and a description (optional). Use the namespace to group different metafields together in a logical way.</p><p>Metafields are specified with the <code>value_type</code> as one of the following:</p>
+<ul>
+<li>integer
+</li>
+<li>string
+</li>
+<li>json_string
+</li>
+</ul>
+<p>By using the correct <code>value_type</code>, you’ll end up with the right type of data when you use the metafields in your Liquid.</p><p>For example, if you’ve added two metafields to a product, and each metafield has the following attributes:</p>
+<div style="overflow:auto"><table>
+  <tbody><tr>
+     <th>Namespace</th>
+     <th>Key</th>
+     <th>Value</th>
+  </tr>
+  </tbody><tbody>
+    <tr>
+      <td>instructions</td>
+      <td>Wash</td>
+      <td>Cold</td>
+    </tr>
+   <tr>
+      <td>instructions</td>
+      <td>Dry</td>
+      <td>Tumble</td>
+    </tr>
+  </tbody>
+</table></div>
+<p>You can then use the following Liquid in <code>product.liquid</code> to output your metafield:</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% assign instructions = product.metafields.instructions %}
+{% assign key = 'Wash' %}
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Wash: {{ instructions[key] }}<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Wash: {{ instructions['Wash'] }}<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Wash: {{ instructions.Wash }}<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Wash: Cold
+Wash: Cold
+Wash: Cold</code></pre></figure>
+<p>You can use the following in <code>product.liquid</code> to output your second metafield:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% assign instructions = product.metafields.instructions %}
+{% assign key = 'Dry' %}
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Dry: {{ instructions[key] }}<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Dry: {{ instructions['Dry'] }}<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Dry: {{ instructions.Dry }}<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+<p>If you need to output all metafields with the namespace <em>instructions</em> attached to a given product, use the following Liquid:</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul&gt;</span>
+   {% for field in product.metafields.instructions %}
+   <span class="nt">&lt;li&gt;</span>{{ field | first }}: {{ field | last }}<span class="nt">&lt;/li&gt;</span>
+   {% endfor %}
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Wash: Cold
+Dry: Tumble</code></pre></figure>
+<p>The key of a metafield is <code>{{ field | first }}</code>, while the value is <code>{{ field | last }}</code>.</p><p>For metafields with a <code>value_type</code> of 'json_string', the metafield is converted to an iterable hash or array:</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Storage instructions:
+<span class="nt">&lt;ul&gt;</span>
+  {% for key_value in product.metafields.instructions['storage'] %}
+    <span class="nt">&lt;li&gt;</span>{{ key_value[0] }}: {{ key_value[1] }}<span class="nt">&lt;/li&gt;</span>
+  {% endfor %}
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Storage instructions:
+min_temp: 0
+max_temp: 50</code></pre></figure>
+
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#examples">Examples</a></li>
+<li><a href="#learn-more">Learn more</a></li>
+    </ul>
+
+    </div><h2 id="examples">Examples</h2>
+<p>You can use metafields to add extra content to a product page.</p><p>For example, you could add tabs to a product page and add links to related products:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{%- assign tabs = product.metafields.tabs -%}
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"tabs"</span><span class="nt">&gt;</span>
+    {% include 'product-description' %}
+    {%- for field in tabs -%}
+        <span class="nt">&lt;li&gt;&lt;h2&gt;</span>{{ field | first }}<span class="nt">&lt;/h2&gt;</span>{{ field | last }}<span class="nt">&lt;/li&gt;</span>
+    {%- endfor -%}
+    {% include 'related-products' %}
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+<p>For example, you could check if a product has washing instructions and show the instructions:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% unless product.metafields.Acme134-instructions.Wash == blank %}
+Wash: {{ product.metafields.Acme134-instructions.Wash }}
+{% endunless %}</code></pre></figure>
+<p>You can use metafields to store attributes about a product. For example, you could create a metafield to store the color of a product and then set the background of the product page to the same color.</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{%- if product.metafields.style.colour != blank -%}
+  {%- assign mColour = product.metafields.style.colour -%}
+  <span class="nt">&lt;style&gt;</span>
+      <span class="nc">.add-to-cart</span> <span class="p">{</span>
+        <span class="nl">background</span><span class="p">:</span> <span class="err">{{</span> <span class="n">mColour</span> <span class="p">}</span><span class="err">}</span>
+      <span class="err">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+{%- endif -%}</code></pre></figure>
+<p>You can use metafields to keep track of your inventory. For example you could use this information to show delivery timeframes, backorder dates, and units sold on a checkout page.</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% if backorder != blank %}<span class="nt">&lt;div&gt;</span>This item is backordered, and will ship in {{ backorder }}<span class="nt">&lt;/div&gt;</span>{% endif %}
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stock-sold-bar"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">data-start=</span><span class="s">"{{ startCount }}"</span> <span class="na">data-stock=</span><span class="s">"{{ currentCount }}"</span> <span class="na">data-percent=</span><span class="s">"{{ soldPercent }}"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+<p>You can use metafields to track your inventory across multiple locations. For example, you could use this information to help track where your products are located:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{%- assign locations = product.metafields.locations -%}
+{%- assign items = locations | split: ';' -%}
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"store-location"</span><span class="nt">&gt;</span>
+    {%- for item in items -%}
+        {% assign stock = item | split:',' %}
+        <span class="nt">&lt;li&gt;</span>{{ stock | first }}: {{ stock | last }}<span class="nt">&lt;/li&gt;</span>
+    {%- endfor -%}
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+<p>You can use metafields to group related products:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{%- assign r = product.metafields.related.items | split:"," -%}
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"related-products"</span><span class="nt">&gt;</span>
+    {%- for p in r -%}
+        {% assign relatedProduct = all_products[p] %}
+        {%- include 'some-snippet' product: relatedProduct -%}
+    {%- endfor -%}
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+<p>You can use metafields to nest products:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{%- assign cParent = product.metafields.col.parent -%}
+{%- assign cChild = product.metafields.col.child -%}
+<span class="nt">&lt;div&gt;</span>
+    {%- if collections[cChild].products.size &gt; 0 -%}
+       {%- include 'collection-loop' with collections[cChild] -%}
+    {%- endif -%}
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+<p>You can use metafields to store <a href="//help.shopify.com/api/tutorials/updating-seo-data">SEO data</a>, such as custom URLS and meta tags. For example, to add <code>noindex</code> and <code>nofollow</code> meta tags to an product page, create a metafield for the object with the following attributes:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">"namespace" : "seo"
+"key" : "hidden"
+"value" : 1
+"value_type" : "integer"</code></pre></figure>
+
+<h2 id="learn-more">Learn more</h2>
+
+<ul>
+<li>
+<a href="/en/manual/products/metafields">Metafields</a>
+</li>
+<li>
+<a href="/en/api/reference/metafield">Metafield API</a>
+</li>
+</ul>
+
+        </article>
+        <div id="Feedback" data-gid="f0273d18-4247-450e-a0eb-e42826f245ef"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>

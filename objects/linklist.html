@@ -1,0 +1,69 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            linklist
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/linklist.
+</div>
+
+
+
+
+            <aside class="note tip">
+  <h4>Tip</h4>
+  <p>
+<code>linklist</code> objects are called "menus" in the <a href="/en/manual/sell-online/online-store/menus-and-links">Navigation</a> page of the Shopify admin.</p>
+</aside><p>The <code>linklist</code> object has the following attributes:</p><p><a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#linklist-handle">linklist.handle</a></li>
+<li><a href="#linklist-levels">linklist.levels</a></li>
+<li><a href="#linklist-links">linklist.links</a></li>
+<li><a href="#linklist-title">linklist.title</a></li>
+    </ul>
+
+    </div><h2 id="linklist-handle">linklist.handle</h2>
+<p>Returns the <a href="/en/themes/liquid/basics/handle">handle</a> of the linklist.</p>
+<h2 id="linklist-levels">linklist.levels</h2>
+<p>Returns the number of nested levels that a linklist contains.</p><p>For example, given the following main menu structure:</p><figure class="highlight"><pre><code class="language-" data-lang="">Main menu
+  └ Home
+  └ About Us
+    └ Locations
+      └ Montreal
+      └ Ottawa</code></pre></figure><p>The following Liquid code:</p><figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">linklists</span><span class="p">.</span><span class="nv">main-menu</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{{</span><span class="w"> </span><span class="nv">menu</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>: <span class="p">{{</span><span class="w"> </span><span class="nv">menu</span><span class="p">.</span><span class="nv">levels</span><span class="w"> </span><span class="p">}}</span></code></pre></figure><p>produces the following output:</p><figure class="highlight"><pre><code class="language-" data-lang="">Main Menu: 3</code></pre></figure>
+<h2 id="linklist-links">linklist.links</h2>
+<p>Returns an array of <a href="/en/themes/liquid/objects/link">links</a> in the linklist.</p>
+<div class="code-label">Input</div>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">link</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">linklists.main-menu.links</span><span class="w"> </span><span class="p">%}</span>
+  &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<div class="code-label">Output</div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/collections/all"</span><span class="nt">&gt;</span>Catalog<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/blogs/news"</span><span class="nt">&gt;</span>Blog<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/pages/about-us"</span><span class="nt">&gt;</span>About Us<span class="nt">&lt;/a&gt;</span></code></pre></figure>
+<h2 id="linklist-title">linklist.title</h2>
+<p>Returns the title of the linklist.</p>
+        </article>
+        <div id="Feedback" data-gid="7ffc59ba-b4f7-475d-bf8b-188e1f934a86"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>

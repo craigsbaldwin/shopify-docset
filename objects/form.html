@@ -1,0 +1,149 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            form
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/form.
+</div>
+
+
+
+
+            <p>The <code>form</code> object is used within the <a href="/en/themes/liquid/tags/theme-tags#form">form</a> tag. It contains attributes of its parent form.</p><p><a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#form-address1">form.address1</a></li>
+<li><a href="#form-address2">form.address2</a></li>
+<li><a href="#form-author">form.author</a></li>
+<li><a href="#form-body">form.body</a></li>
+<li><a href="#form-city">form.city</a></li>
+<li><a href="#form-company">form.company</a></li>
+<li><a href="#form-country">form.country</a></li>
+<li><a href="#form-email">form.email</a></li>
+<li><a href="#form-errors">form.errors</a></li>
+<li><a href="#form-first_name">form.first_name</a></li>
+<li><a href="#form-id">form.id</a></li>
+<li><a href="#form-last_name">form.last_name</a></li>
+<li><a href="#form-password_needed">form.password_needed</a></li>
+<li><a href="#form-phone">form.phone</a></li>
+<li><a href="#form-posted_successfully">form.posted_successfully?</a></li>
+<li><a href="#form-province">form.province</a></li>
+<li><a href="#form-set_as_default_checkbox">form.set_as_default_checkbox</a></li>
+<li><a href="#form-zip">form.zip</a></li>
+    </ul>
+
+    </div><h2 id="form-address1">form.address1</h2>
+<p>Returns the first address line associated with the address.  Exclusive to <code>form</code> tags with the "address" parameter.</p>
+<h2 id="form-address2">form.address2</h2>
+<p>Returns the second address line associated with the address, if it exists.  Exclusive to <code>form</code> tags with the "address" parameter.</p>
+<h2 id="form-author">form.author</h2>
+<p> </p><p>Returns the name of the author of the blog article comment. Exclusive to <code>form</code> tags with the "article" parameter.</p>
+<h2 id="form-body">form.body</h2>
+<p> </p><p>Returns the content of the blog article comment. Exclusive to <code>form</code> tags with the "article" parameter.</p>
+<h2 id="form-city">form.city</h2>
+<p> Returns the city associated with the address.  Exclusive to <code>form</code> tags with the "address" parameter.</p>
+<h2 id="form-company">form.company</h2>
+<p> Returns the company name associated with the address, if it exists.  Exclusive to <code>form</code> tags with the "address" parameter.</p>
+<h2 id="form-country">form.country</h2>
+<p> Returns the country associated with the address.  Exclusive to <code>form</code> tags with the "address" parameter.</p>
+<h2 id="form-email">form.email</h2>
+
+<p>Returns the email of the blog article comment's author. Exclusive to <code>form</code> tags with the "article" parameter.</p>
+<p><a id="topofpage"></a></p>
+<h2 id="form-errors">form.errors</h2>
+<p>Returns an array of strings if the form was not submitted successfully. The strings returned depend on which fields of the form were left empty or contained errors. Possible values are:</p>
+<ul>
+<li>author
+</li>
+<li>body
+</li>
+<li>email
+</li>
+<li>form
+</li>
+</ul>
+
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% for error in form.errors %}
+    {{ error }}
+{% endfor %}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- if the Name field was left empty by the user --&gt;</span>
+author</code></pre></figure>
+<p>You can apply the <a href="/en/themes/liquid/filters/additional-filters#default_errors">default_errors</a> filter on <code>form.errors</code> to output default error messages without having to loop through the array.</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% if form.errors %}
+      {{ form.errors | default_errors }}
+{% endif %}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Please enter a valid email address.</code></pre></figure>
+<p>If you want more control over the markup of the errors, you can loop through the <code>messages</code> and <code>translated_fields</code> arrays that are part of the <code>form.errors</code> object.</p><figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">field</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">form.errors</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">field</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'form'</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">form</span><span class="p">.</span><span class="nv">errors</span><span class="p">.</span><span class="nv">messages</span><span class="p">[</span><span class="nv">field</span><span class="p">]</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">form</span><span class="p">.</span><span class="nv">errors</span><span class="p">.</span><span class="nv">translated_fields</span><span class="p">[</span><span class="nv">field</span><span class="p">]</span><span class="w"> </span><span class="p">}}</span> - <span class="p">{{</span><span class="w"> </span><span class="nv">form</span><span class="p">.</span><span class="nv">errors</span><span class="p">.</span><span class="nv">messages</span><span class="p">[</span><span class="nv">field</span><span class="p">]</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+<h2 id="form-first_name">form.first_name</h2>
+<p>Returns the first name associated with the address.  Exclusive to <code>form</code> tags with the "address" parameter.</p>
+<h2 id="form-id">form.id</h2>
+<p>Returns the id (unique identifier) of the form.</p>
+<h2 id="form-last_name">form.last_name</h2>
+<p>Returns the last name associated with the address.  Exclusive to <code>form</code> tags with the "address" parameter.</p>
+<h2 id="form-password_needed">form.password_needed</h2>
+<p>Used only for <code>form</code> tags with the "customer_login" parameter.  The <code>form.password_needed</code> attribute always returns <code>true</code>.</p>
+<h2 id="form-phone">form.phone</h2>
+<p>Returns the telephone number associated with the address, if it exists.  Exclusive to <code>form</code> tags with the "address" parameter.</p>
+<h2 id="form-posted_successfully">form.posted_successfully?</h2>
+
+<p>Returns <code>true</code> if the form was submitted successfully, or <code>false</code> if the form contained errors. All forms but the address form set that property. The address form is always submitted successfully.</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% if form.posted_successfully? %}
+    Comment posted successfully!
+{% else %}
+    {{ form.errors | default_errors }}
+{% endif %}</code></pre></figure>
+</div>
+
+<h2 id="form-province">form.province</h2>
+<p>Returns the province or state associated with the address.  Exclusive to <code>form</code> tags with the "address" parameter.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">form</span><span class="p">.</span><span class="nv">city</span><span class="w"> </span><span class="p">}}</span>, <span class="p">{{</span><span class="w"> </span><span class="nv">form</span><span class="p">.</span><span class="nv">province</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">San Francisco, California</code></pre></figure>
+<h2 id="form-set_as_default_checkbox">form.set_as_default_checkbox</h2>
+<p>Renders an HTML checkbox that can submit the current form as the customer's default address.  Exclusive to <code>form</code> tags with the "address" parameter.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">form</span><span class="p">.</span><span class="nv">set_as_default_checkbox</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"address_default_address_12345678"</span> <span class="na">name=</span><span class="s">"address[default]"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span></code></pre></figure>
+<h2 id="form-zip">form.zip</h2>
+<p>Returns the zip code or postal code associated with the address.  Exclusive to <code>form</code> tags with the "address" parameter.</p>
+        </article>
+        <div id="Feedback" data-gid="e5b17236-b5f6-4242-bd64-7230972d9876"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>

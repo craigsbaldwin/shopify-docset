@@ -1,0 +1,95 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            handle
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/handle.
+</div>
+
+
+
+
+            <p>The <code>handle</code> object returns the handle of the following resources:</p>
+<ul>
+<li>blogs
+</li>
+<li>articles
+</li>
+<li>collections
+</li>
+<li>pages
+</li>
+<li>products.
+</li>
+</ul>
+<p>You can view and edit a resource's handle from the Shopify admin in the <strong>Search engine listing preview</strong> section:</p>
+<figure class="figure"><img src="https://cdn.shopify.com/shopifycloud/help/assets/themes/about-us-handle-b928f530073c021ac7179101d865505f9f05117b99e2a61c57da706ddae1658c.png" width="665" height="498"></figure>
+
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#targeting-webpages">Targeting webpages</a></li>
+<li><a href="#webpages-that-dont-have-their-own-handle">Webpages that don't have their own handle</a></li>
+<li><a href="#special-characters">Special characters</a></li>
+    </ul>
+
+    </div><h2 id="targeting-webpages">Targeting webpages</h2>
+<p>You can use the <code>handle</code> object to target specific webpages for instances where you want to show different content on different pages. For example, to display a message only on a webpage with the handle <code>top-secret</code>, you could add the following code to the <code>theme.liquid</code> template:</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% if handle contains 'secret' %}
+  <span class="nt">&lt;p&gt;</span>Shh! This is between you and us.<span class="nt">&lt;/p&gt;</span>
+{% endif %}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- On a page with a title of Top Secret, and a handle of top-secret --&gt;</span>
+Shh! This is between you and us.</code></pre></figure>
+
+<h2 id="webpages-that-dont-have-their-own-handle">Webpages that don't have their own handle</h2>
+<p>Not all webpages have their own handle.</p><p>Your store's home page, which uses the template <code>index.liquid</code>, will not return any value for <code>handle</code>:</p>
+<p class="code-label">Input</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% if handle %}
+  <span class="nt">&lt;p&gt;</span>You are either looking at a product, a collection, a page, a blog, or an article in a blog.<span class="nt">&lt;p&gt;</span>
+{% else %}
+  <span class="nt">&lt;p&gt;</span>You must be somewhere else. Hope you're having fun!<span class="nt">&lt;/p&gt;</span>
+{% endif %}</code></pre></figure>
+
+<p class="code-label">Output</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- On a store's home page --&gt;</span>
+You must be somewhere else. Hope you're having fun!</code></pre></figure>
+
+<h2 id="special-characters">Special characters</h2>
+<p>Because handles are used for storefront navigation, they must contain only alpha-numeric characters (a-z, 0 to 9). The following character cannot be used:</p>
+<ul>
+<li>accents, such as umlauts, and other diacriticals
+</li>
+<li>symbols, such as <code>@</code>, <code>#</code>, or <code>$</code>
+</li>
+<li>spaces.
+</li>
+</ul>
+<p>Note that spaces will be converted to hyphens, and other characters will either be removed entirely, or converted to an equivalent standard ASCII character.</p>
+        </article>
+        <div id="Feedback" data-gid="8c2c2408-1755-49e2-a3a3-11b3d08bccda"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>

@@ -1,0 +1,108 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            gift_card
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/gift-card.
+</div>
+
+
+
+
+            <p>The <code>gift_card</code> object can be accessed in the following templates:</p>
+<ol>
+<li><p>The <strong>Gift card created</strong> email notification template <a href="//www.shopify.com/admin/settings/notifications">Email Notifications &gt; Gift card created</a></p></li>
+<li><p>The <a href="/en/themes/development/templates/gift-card-liquid"><strong>gift_card.liquid</strong></a> template.</p></li>
+</ol>
+<aside class="note">
+  <h4>Note</h4>
+  <p>
+Attributes for money amounts, such as prices and totals, are in the customer's local (presentment) currency. Use a <a href="/en/themes/liquid/filters/money-filters">money filter</a> to show the result as a monetary amount.</p>
+</aside><p>The <code>gift_card</code> variable has the following attributes:</p><p><a id="topofpage"></a></p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#gift_card-balance">gift_card.balance</a></li>
+<li><a href="#gift_card-code">gift_card.code</a></li>
+<li><a href="#gift_card-currency">gift_card.currency</a></li>
+<li><a href="#gift_card-customer">gift_card.customer</a></li>
+<li><a href="#gift_card-enabled">gift_card.enabled</a></li>
+<li><a href="#gift_card-expired">gift_card.expired</a></li>
+<li><a href="#gift_card-expires_on">gift_card.expires_on</a></li>
+<li><a href="#gift_card-initial_value">gift_card.initial_value</a></li>
+<li><a href="#gift_card-properties">gift_card.properties</a></li>
+<li><a href="#gift_card-product">gift_card.product</a></li>
+<li><a href="#gift_card-url">gift_card.url</a></li>
+    </ul>
+
+    </div><h2 id="gift_card-balance">gift_card.balance</h2>
+<p>Returns the amount of money remaining on the gift card.</p>
+<h2 id="gift_card-code">gift_card.code</h2>
+
+<p>Returns the code that was used to redeem the gift card.</p>
+
+<h2 id="gift_card-currency">gift_card.currency</h2>
+
+<p>Returns the currency that the card was issued in. This currency is the currency of the store.</p>
+
+<h2 id="gift_card-customer">gift_card.customer</h2>
+<p>Returns the <a href="/en/themes/liquid/objects/customer">customer</a> variable of the customer that the gift card is assigned to.</p>
+<p class="code-label">Input</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Hey, {{ gift_card.customer.first_name }}!</code></pre></figure>
+</div>
+
+<p class="code-label">Output</p>
+
+<div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">Hey, John!</code></pre></figure>
+</div>
+
+<h2 id="gift_card-enabled">gift_card.enabled</h2>
+
+<p>Returns <code>true</code> if the card is enabled, or <code>false</code> if the card is disabled.</p>
+
+<h2 id="gift_card-expired">gift_card.expired</h2>
+
+<p>Returns <code>true</code> if the card is expired, or <code>false</code> if the card is not.</p>
+
+<h2 id="gift_card-expires_on">gift_card.expires_on</h2>
+
+<p>Returns the expiration date of the gift card</p>
+
+<h2 id="gift_card-initial_value">gift_card.initial_value</h2>
+
+<p>Returns the initial amount of money on the gift card. This amount is in the customer's local (presentment) currency.</p>
+
+<h2 id="gift_card-properties">gift_card.properties</h2>
+<p>Returns the <a href="/en/themes/liquid/objects/line_item#line_item-properties">line item properties</a> assigned to the gift card when it was added to the cart.</p>
+<h2 id="gift_card-product">gift_card.product</h2>
+
+<p>Returns the <a href="/en/themes/liquid/objects/product">product</a> associated with the purchased gift card, or returns nothing if there is no associated product.</p>
+
+<h2 id="gift_card-url">gift_card.url</h2>
+
+<p>Returns the unique URL that links to the gift card's page on the shop (rendered through <strong>gift_card.liquid</strong>).</p>
+
+        </article>
+        <div id="Feedback" data-gid="3a541c88-ded0-4cba-b2ab-d4c0d947ee43"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>

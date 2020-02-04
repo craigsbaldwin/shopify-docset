@@ -1,0 +1,79 @@
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/vendors~help_center~internal-caf978737ff462c5095f6c9e31356f963abb65c0f791a896f2edbb2c42b593be.css" rel="stylesheet">
+<link href="https://cdn.shopify.com/shopifycloud/help/bundles/latest/help_center-89dd313adab30d0c4ac420a5ed6d372c9ad363b8e7e8c11ba20b1a52ff59f1ad.css" rel="stylesheet">
+<link rel="stylesheet" media="all" href="https://cdn.shopify.com/shopifycloud/help/assets/application-f25f39a510f9f371c2388ea07442a0ad76618fa4f839b4f7295d42e28fba0270.css">
+
+<style>
+  .grid__item {
+    padding-left: 100px;
+  }
+</style>
+
+<div class="grid__item grid__item--tablet-up-4 grid__item--desktop-up-8">
+      <section class="section">
+        <article class="article object" data-swiftype-index="true">
+          <h1 class="article-title" data-swiftype-index="false">
+            font
+
+          </h1>
+
+
+
+          <div class="print-notice" data-swiftype-index="false">
+  This page was printed on Feb 04, 2020. For the current version, visit https://help.shopify.com/en/themes/liquid/objects/font.
+</div>
+
+
+
+
+            <p>The <code>font</code> object is used to access the <a href="/en/themes/development/theme-editor/settings-schema#font-picker"><code>font_picker</code></a> settings. It can be accessed via the global <a href="/en/themes/liquid/objects#settings"><code>settings</code></a> object. The <code>font</code> object has the following attributes:</p>
+<div class="table-of-contents">
+      <h2>On this page</h2>
+
+
+    <ul>
+      <li><a href="#font-baseline_ratio">font.baseline_ratio</a></li>
+<li><a href="#font-fallback_families">font.fallback_families</a></li>
+<li><a href="#font-family">font.family</a></li>
+<li><a href="#font-style">font.style</a></li>
+<li><a href="#font-weight">font.weight</a></li>
+<li><a href="#font-variants">font.variants</a></li>
+    </ul>
+
+    </div><h2 id="font-baseline_ratio">font.baseline_ratio</h2>
+<p>Returns the position of the baseline within the em box (measured from the bottom).
+You can learn more about baseline ratios in the <a href="https://jamonserrano.github.io/plumber-sass/baselines/">Plumber SASS documentation</a>.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">settings</span><span class="p">.</span><span class="nv">heading_font</span><span class="p">.</span><span class="nv">baseline_ratio</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0.091</code></pre></figure>
+<h2 id="font-fallback_families">font.fallback_families</h2>
+<p>Returns the suggested fallback font families.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">settings</span><span class="p">.</span><span class="nv">heading_font</span><span class="p">.</span><span class="nv">fallback_families</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sans-serif</code></pre></figure>
+<h2 id="font-family">font.family</h2>
+<p>Returns the font's name.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">settings</span><span class="p">.</span><span class="nv">heading_font</span><span class="p">.</span><span class="nv">family</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">"Neue Haas Unica"</code></pre></figure>
+<h2 id="font-style">font.style</h2>
+<p>Returns the selected font style.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">settings</span><span class="p">.</span><span class="nv">heading_font</span><span class="p">.</span><span class="nv">style</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">normal</code></pre></figure>
+<h2 id="font-weight">font.weight</h2>
+<p>Returns the selected font weight.</p>
+<p class="code-label">Input</p>
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">settings</span><span class="p">.</span><span class="nv">heading_font</span><span class="p">.</span><span class="nv">weight</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+<p class="code-label">Output</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">400</code></pre></figure>
+<h2 id="font-variants">font.variants</h2>
+<p>Returns all of the variants within the font's family. Each of the variants is also a <code>font</code> object.</p><figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">variant</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">settings.heading_font.variants</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">variant</span><span class="p">.</span><span class="nv">family</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+        </article>
+        <div id="Feedback" data-gid="f6d98ae2-8e24-4841-8043-08f45b8a4a12"><div id="feedback-container" class="p1ZnY"><h4>Was this page helpful?</h4><button id="LQWss" class="marketing-button marketing-button--skin-teal" type="button">Yes</button><button id="_3RQzQ" class="marketing-button marketing-button--skin-salmon" type="button">No</button></div></div>
+</section></div>
